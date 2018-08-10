@@ -1,4 +1,4 @@
-class Front::Members::RegistersController < ApplicationController
+class Front::Members::RegistersController < Devise::RegistrationsController
   def new
       @user = User.new()
   end

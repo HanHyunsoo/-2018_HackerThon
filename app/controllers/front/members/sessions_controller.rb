@@ -1,4 +1,4 @@
-class Front::Members::SessionsController < ApplicationController
+class Front::Members::SessionsController < Devise::SessionsController
     def new
     end
     
