@@ -11,4 +11,13 @@ class PostsController < ApplicationController
   def maker
   end
   
+  #마이페이지
+  def my_page
+  end
+  
+  #수공업자 개인페이지
+  def seller_page
+  end
+  
+  
 end

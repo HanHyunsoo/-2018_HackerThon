@@ -5,14 +5,19 @@ Rails.application.routes.draw do
     get 'login' => 'front/members/sessions#new', as: :new_user_session #로그인 화면
     post 'login' => 'front/members/sessions#create', as: :user_session #로그인(POST)
     delete '/users/sign_out' => 'front/members/sessions#destroy', as: :destroy_user_session #로그아웃
-    get '/users/sign_up' => 'front/members/registers#new', as: :new_user_registration #회원가입
+    get '/users/sign_up' => 'front/members/registers#new', as: :new_user_registration #일반사용자 회원가입
     post 'users' => 'front/members/registers#create', as: :user_registration #회원가입(POST)
   end
   
   root 'posts#index'
+  get 'posts/registers_new'
   get 'posts/index'
   get 'posts/order'  #주문제작 화면
   get 'posts/maker'  #수공업자 소개 화면
+  get 'posts/my_page' #마이페이지
+  get 'posts/seller_page' #수공업자 개인 페이지
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

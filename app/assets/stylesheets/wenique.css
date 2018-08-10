@@ -16,8 +16,8 @@ nav{
 .navigation{
 	/*padding-top: 10px;*/
 	/*padding-left: 30px;*/
-	padding-bottom: 2px;
-	border-bottom: 2px solid black;
+	padding-bottom: 1px;
+	border-bottom: 1px solid black;
 	display:grid;
 	grid-template-columns: 1fr 5fr 1fr;
 }
@@ -41,10 +41,13 @@ nav{
 /*카테고리*/
 .catagory{
     width: 100%;
-    height: 140px;
+    height: 70px;
     text-align: center;
-    padding-top: 72px;
-    border-bottom: 2px solid black;
+    margin-top: 72px;
+    border-bottom: 1px solid black;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
 }
 
 .cata_button{
@@ -64,7 +67,7 @@ header{
     display:grid;
     grid-template-columns: 1fr 6.5fr 1fr;
 /*    margin-bottom: 2px;*/
-    margin-top: 0px;
+    padding-top: 142px;
     
 }
 
@@ -87,16 +90,16 @@ section{
 }
 
 ._left{
-    border-right: 2px solid black;
+    border-right: 1px solid black;
 }
 ._right{
-    border-left: 2px solid black;
+    border-left: 1px solid black;
 }
 
 /*footer*/
 footer{
     width: 100%;
     height: 80px;
-    border-top: 2px solid rgb(170, 170, 170);
+    border-top: 1px solid rgb(170, 170, 170);
     background-color: rgb(80, 80, 80);
 }

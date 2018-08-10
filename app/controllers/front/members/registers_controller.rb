@@ -6,4 +6,6 @@ class Front::Members::RegistersController < ApplicationController
   def create
     super
   end
+  
+
 end

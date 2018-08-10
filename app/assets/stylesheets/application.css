@@ -44,8 +44,10 @@ body{
   animation:none !important;
 }
 
+
+/*햄버거 바 */
 .line {
-  background:#000066;
+  background:rgb(51, 102, 255);
   margin-top:6px;
   margin-bottom:6px;
   width:56px;
