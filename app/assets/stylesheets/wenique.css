@@ -1,0 +1,102 @@
+/*navigation bar*/
+
+nav{
+	width: 100%;
+	height: 72px;
+	position: fixed;
+	background-color: white;
+	margin-top: 0px;
+	z-index: 1;
+}
+
+.logo{
+    padding-left: 30px;
+}
+
+.navigation{
+	/*padding-top: 10px;*/
+	/*padding-left: 30px;*/
+	padding-bottom: 2px;
+	border-bottom: 2px solid black;
+	display:grid;
+	grid-template-columns: 1fr 5fr 1fr;
+}
+
+.top_button{
+	padding-top: 15px;
+	/*padding-left: 10px;*/
+	text-align: center;
+}
+
+.nav_user{
+	padding-top: 30px;
+	color: black;
+}
+/*링크 밑줄 제거*/
+.nav_user a:link { color: black; text-decoration: none;}
+.nav_user a:visited { color: black; text-decoration: none;}
+.nav_user a:hover { color: black; text-decoration: underline;}
+
+
+/*카테고리*/
+.catagory{
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    padding-top: 72px;
+    border-bottom: 2px solid black;
+}
+
+.cata_button{
+    margin-top: 13px;
+}
+
+/*header*/
+
+header{
+
+    width: 100%;
+    height: 600px;
+    /*background-color: rgb(255, 30, 20);*/
+    /*border-bottom: 2px solid black;*/
+    /*border-top: 2px solid rgb(255, 0, 0);*/
+    
+    display:grid;
+    grid-template-columns: 1fr 6.5fr 1fr;
+/*    margin-bottom: 2px;*/
+    margin-top: 0px;
+    
+}
+
+.header_center{
+        border-bottom: 2px solid black;
+}
+
+/*사이드 메뉴*/
+.dorpdown{
+    text-align: center;
+    padding-top: 600px;
+}
+/*section*/
+
+section{
+    width: 100%;
+    height: 2000px;
+    display:grid;
+    grid-template-columns: 1fr 6.5fr 1fr;
+}
+
+._left{
+    border-right: 2px solid black;
+}
+._right{
+    border-left: 2px solid black;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    height: 80px;
+    border-top: 2px solid rgb(170, 170, 170);
+    background-color: rgb(80, 80, 80);
+}

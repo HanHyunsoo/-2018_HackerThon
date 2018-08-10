@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     get '/users/sign_up' => 'front/members/registers#new', as: :new_user_registration #회원가입
     post 'users' => 'front/members/registers#create', as: :user_registration #회원가입(POST)
   end
+  
   root 'posts#index'
   get 'posts/index'
+  get 'posts/order'  #주문제작 화면
+  get 'posts/maker'  #수공업자 소개 화면
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
