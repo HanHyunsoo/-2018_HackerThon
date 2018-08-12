@@ -14,9 +14,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :business_number, null: true #사업자번호(일반사용자 입력x)
       t.string :phone_number, null: false #핸드폰번호
       t.string :address, null: false      #집주소
-      t.string :postcode, null: false  #우편번호
-      t.string :address_detail, null: true #상세주소
-      t.string :address_extra_info, null: false #주소 추가정보(빌라이름, 아파트이름같은것)
+      t.string :postcode, null: true  #우편번호
+      t.string :details, null: true #상세주소 
+      t.string :extra_info, null: true #주소 추가정보(빌라이름, 아파트이름같은것)
   
 
       ## Recoverable

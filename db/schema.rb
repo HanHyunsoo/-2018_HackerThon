@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20180811172036) do
     t.string   "business_number"
     t.string   "phone_number",                         null: false
     t.string   "address",                              null: false
-    t.string   "postcode",                             null: false
-    t.string   "adress_detail"
-    t.string   "adress_extra_info",                    null: false
+    t.string   "postcode"
+    t.string   "details"
+    t.string   "extra_info"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

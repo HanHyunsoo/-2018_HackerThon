@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :boards, only: [:index] do
+  
+  # resources :boards, only: [:index]do
+  #   resources :articles
+  # end
+  
+  
+  scope '/boards/:board_id' do
     resources :articles
   end
   
@@ -22,6 +28,8 @@ Rails.application.routes.draw do
   get 'posts/notice' #공지사항
   
   # get 'boards/:board_id/articles' => 'articles#index'
+
+  # get 'boards/:board_id/articles/new', to: 'articles#new', as: 'articles'
 
   
 
