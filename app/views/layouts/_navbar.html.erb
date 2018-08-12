@@ -1,0 +1,50 @@
+<nav>
+  <div class="navigation">
+  	<div class="logo">
+  		<a href="/"><img src="/assets/logo.png" height="75"></a>
+  	</div>
+  	<div class="top_button">
+  		<!--인덱스 뷰-->
+  		<!--<a href="/"><img src="/assets/판매제품_bar.png" height="30" style="padding-left: 0px;"></a>-->
+  	    <a href="/"><p>판매제품</p></a>
+  			
+  		<!--주문제작 뷰-->
+  		<!--<a href="/posts/order"><img src="/assets/주문제작.png" height="30" style="padding-left: 40px;"></a>-->
+  		<a href="/posts/order"><p>주문의뢰</p></a>
+  		
+  		<!--수공업자 소개 뷰-->
+  		<!--<a href="/posts/maker"><img src="/assets/수공업자.png" height="30" style="padding-left: 40px;"></a>-->
+  	    <a href="/posts/maker"><p>수공업자</p></a>
+  	
+  	</div>
+  	<!--로그인과 회원가입-->
+  	<div class="nav_user">
+      <% if current_user == nil %>
+  		<a href="/users/sign_in"><span style="border-right: 2px solid black; padding-right: 10px;">LOG IN</span></a>
+  		<a href="/posts/registers_new"><span style="padding-left: 5px;">SIGN UP</span></a>
+        
+      <% else %>
+  		<a href="/users/sign_out"><span style="border-right: 2px solid black; padding-right: 10px;">LOG OUT</span></a>
+  		<a href="#"><span style="padding-left: 10px;"><img src="/assets/mypage.png" height="20">MY PAGE</span></a>
+      <% end %>
+  	</div>
+  </div>
+</nav>
+<!--<div class="catagory">-->
+<!--    <div class="cata_button">-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-primary">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-secondary">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-success">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-danger">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-warning">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-info">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-dark">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-primary">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-secondary">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-success">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-danger">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-warning">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-info">Catagory</button></a>-->
+<!--        <a href="#"><button type="button" class="btn btn-outline-dark">Catagory</button></a>-->
+<!--    </div>-->
+<!--</div>-->

@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810083746) do
+ActiveRecord::Schema.define(version: 20180811172036) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "u_id"
-    t.integer  "b_id"
-    t.string   "img_url",    default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "board_id"
+  end
+
+  create_table "autorities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "boards", force: :cascade do |t|
@@ -40,19 +44,51 @@ ActiveRecord::Schema.define(version: 20180810083746) do
     t.integer "category_id"
   end
 
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "img_url",    default: ""
+    t.text     "content"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "seller_pages", force: :cascade do |t|
+    t.integer  "s_id",                        null: false
+    t.string   "img_url",        default: ""
+    t.string   "introduce",                   null: false
+    t.integer  "s_portfolio_id"
+    t.integer  "s_review_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                                null: false
+    t.string   "encrypted_password",     default: "",  null: false
+    t.string   "name",                                 null: false
+    t.string   "mail",                                 null: false
+    t.string   "authorization",          default: "2"
+    t.string   "business_number"
+    t.string   "phone_number",                         null: false
+    t.string   "address",                              null: false
+    t.string   "postcode",                             null: false
+    t.string   "adress_detail"
+    t.string   "adress_extra_info",                    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -3,8 +3,12 @@ class PostsController < ApplicationController
   def index
   end
   
-  # 주문제작
-  def order
+  # 지정주문의뢰
+  def assign_order
+  end
+  
+  # 미지정 주문의뢰
+  def unassign_order
   end
   
   #수공업자
@@ -19,5 +23,12 @@ class PostsController < ApplicationController
   def seller_page
   end
   
+  #자유게시판
+  def user_board
+  end
+  
+  #공지사항
+  def notice
+  end
   
 end

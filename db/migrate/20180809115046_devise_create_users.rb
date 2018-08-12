@@ -4,17 +4,21 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: "" #user_id
+      t.string :email,              null: false #user_id
       t.string :encrypted_password, null: false, default: ""
       
-      
-      ##추가한거
-      t.string :name, null: false
-      t.string :mail, null: false
-      t.string :authorization, default: 2
-      t.string :business_number
-      t.string :phone_number, null: false
-      t.string :address, null: false
+      ##추가
+      t.string :name, null: false   #이름
+      t.string :mail, null: false   #이메일
+      t.string :authorization, default: 2 #권한
+      t.string :business_number, null: true #사업자번호(일반사용자 입력x)
+      t.string :phone_number, null: false #핸드폰번호
+      t.string :address, null: false      #집주소
+      t.string :postcode, null: false  #우편번호
+      t.string :address_detail, null: true #상세주소
+      t.string :address_extra_info, null: false #주소 추가정보(빌라이름, 아파트이름같은것)
+  
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

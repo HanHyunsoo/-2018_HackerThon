@@ -1,68 +1,8 @@
-<!--인덱스 뷰-->
-<!--메인페이지 이자 동시에 판매 상품을 보여주는 화면-->
-<nav>
-  <div class="navigation">
-  	<div class="logo">
-  		<img src="/assets/logo.png" height="70">
-  	</div>
-  	<div class="top_button">
-  		<!--인덱스 뷰-->
-  		<a href="/"><img src="/assets/판매제품_bar.png" height="30" style="padding-left: 0px;"></a>
-  		<!--주문제작 뷰-->
-  		<a href="/posts/order"><img src="/assets/주문제작.png" height="30" style="padding-left: 40px;"></a>
-  		<!--수공업자 소개 뷰-->
-  		<a href="/posts/maker"><img src="/assets/수공업자.png" height="30" style="padding-left: 40px;"></a>
-  	</div>
-  	<!--로그인과 회원가입-->
-  	<div class="nav_user">
-  		<a href="#"><span style="border-right: 2px solid black; padding-right: 10px;">LOGIN</span></a>
-  		<a href="/posts/registers_new"><span style="padding-left: 5px;">SIGN UP</span></a>
-  	</div>
-  </div>
-</nav>
-<div class="catagory">
-    <div class="cata_button">
-        <button type="button" class="btn btn-outline-primary">Catagory</button>
-        <button type="button" class="btn btn-outline-secondary">Catagory</button>
-        <button type="button" class="btn btn-outline-success">Catagory</button>
-        <button type="button" class="btn btn-outline-danger">Catagory</button>
-        <button type="button" class="btn btn-outline-warning">Catagory</button>
-        <button type="button" class="btn btn-outline-info">Catagory</button>
-        <button type="button" class="btn btn-outline-dark">Catagory</button>
-        <button type="button" class="btn btn-outline-primary">Catagory</button>
-        <button type="button" class="btn btn-outline-secondary">Catagory</button>
-        <button type="button" class="btn btn-outline-success">Catagory</button>
-        <button type="button" class="btn btn-outline-danger">Catagory</button>
-        <button type="button" class="btn btn-outline-warning">Catagory</button>
-        <button type="button" class="btn btn-outline-info">Catagory</button>
-        <button type="button" class="btn btn-outline-dark">Catagory</button>
-    </div>
-</div>
-<header>
+
+<header style="background-color: rgb(210, 120, 120)">
+    <!--그리드 왼쪽 -->
     <div class="_left">
-        <div class="dropdown">
-          <!--햄버거메뉴실험-->
-          <div id="wrapper" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div id="line-wrapper">
-              <!-- 추가된 부분 -->
-              <div id="line-top" class="line init top-reverse"></div>
-              <div id="line-mid" class="line init mid-reverse"></div>
-              <div id="line-bot" class="line init bot-reverse"></div>
-            </div>
-          </div>
-          <!--여기까지-->
-          <!--드롭버튼-->
-          <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-          <!--  Dropdown button-->
-          <!--</button>-->
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(73px, 90px, 0px); top: 0px; left: -40px; text-align: center; will-change: transform;">
-            <a class="dropdown-item" href="#">1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a>
-          </div>
-        </div>
     </div>
-    <!--햄버거 메뉴 끝-->
 
     <div class="header_center">
           <!--캐러샐-->
@@ -82,7 +22,7 @@
               <img class="d-block w-100" src="/assets/sample_2.png" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="/assets/sample_1.png" alt="Third slide">
+              <img class="d-block w-100" src="/assets/sample_3.png" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -96,13 +36,29 @@
         </div>
         <!--여기까지-->
     </div>
-    <div class="_right"></div>
+    
+    <!--그리드 오른쪽-->
+    <div class="_right">
+      
+    </div>
 </header>
 <section>
+  <!--그리드 왼쪽-->
   <div class="_left"></div>
-  <div></div>
+  <!--섹션 가운데-->
+  <div class="sec_center">
+    <div id="cen_left"></div>
+    <div id="cen_cen">이달의 BEST 작품</div>
+    <div id="cen_right"></div>
+  </div>
+  <!--그리드 오른쪽-->
   <div class="_right"></div>
 </section>
-<footer>
-  <h1>footer</h1>
-</footer>
+<div  class="section_2">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>

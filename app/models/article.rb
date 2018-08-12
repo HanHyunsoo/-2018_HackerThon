@@ -1,3 +1,4 @@
 class Article < ActiveRecord::Base
-    belongs_to :board
+        # attr_accessible :name, :board_id
+        belongs_to :board
 end
