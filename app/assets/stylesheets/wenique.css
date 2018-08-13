@@ -8,7 +8,7 @@ boduy{
 nav{
 	width: 100%;
 	height: 76px;
-	position: fixed;
+	/*position: fixed;*/ /*이건 왜 한건가융*/
 	background-color: white;
 	margin-top: 0px;
 	z-index: 1;
@@ -35,8 +35,8 @@ nav{
 	text-align: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	padding-left: 37rem;
-	padding-right: 37rem;
+	/*padding-left: 37rem;*/ /*메뉴가 너무 내려와서 바디가 안보여서 주석햇어염><*/
+	/*padding-right: 37rem;*/
 	font-size: 25px;
 }
 
@@ -137,6 +137,11 @@ section{
 .section_2{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+}
+
+/*body의 yield부분*/
+.bodyyield{
+    min-height: 900px; 
 }
 
 /*footerbar 위*/

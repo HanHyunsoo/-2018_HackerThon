@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   
-  # resources :boards, only: [:index]do
-  #   resources :articles
-  # end
+  resources :boards, only: [:index] do
+    resources :articles, only: [:update, :destroy]
+  end
   
   
-  scope '/boards/:board_id' do
+  scope '/boards/:board_id', except: [:update, :destroy] do
     resources :articles
   end
   
