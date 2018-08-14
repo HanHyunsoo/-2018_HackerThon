@@ -1,14 +1,11 @@
 
-boduy{
-    height: 1000px;
-}
 
 /*navigation bar*/
 
 nav{
 	width: 100%;
 	height: 76px;
-	/*position: fixed;*/ /*이건 왜 한건가융*/
+	position: fixed; /*이건 왜 한건가융*/
 	background-color: white;
 	margin-top: 0px;
 	z-index: 1;
@@ -72,7 +69,6 @@ nav{
     margin-top: 7px;
 }
 
-/*header*/
 
 header{
 
@@ -102,7 +98,7 @@ header{
 
 section{
     width: 100%;
-    height: 2000px;
+    height: 80px;
     display:grid;
     grid-template-columns: 1fr 6.5fr 1fr;
     margin-top: 60px;
@@ -129,15 +125,41 @@ section{
 #cen_cen{
     text-align: center;
     font-size: 40px;
-    padding-top: 13px;
+    margin-top: 30px;
 }
 
 /*index 상품이미지가 올라가는 부분*/
 
 .section_2{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+    width: 100%;
+    height: 2000px;
+    display:grid;
+    grid-template-columns: 1fr 6.5fr 1fr;
+    margin-top: 60px;
 }
+
+.section_2_cen{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    
+}
+
+#on_display{
+    padding: 25px;
+    height: 450px;
+    width: 345px;
+    text-align: center;
+}
+
+#on_display p{
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 25px;
+    font-size: 23px;
+}
+
+
 
 /*body의 yield부분*/
 .bodyyield{
