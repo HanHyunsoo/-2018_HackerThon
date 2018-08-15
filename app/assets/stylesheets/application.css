@@ -13,37 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-body{
-    margin: 0px;
-}
-
-/*햄버거 메뉴 연습*/
-
- #wrapper {
-  width:70px;
-  height:70px;
-  /*background: green;*/
-  box-shadow: 0 1px 15px rgba(0,0,0,.8);
-  position:absolute;
-  left:73px;
-  top: 20px;}
-
-#line-wrapper {
-  cursor:pointer;
-  width:56px;
-  height:35px;
-  position:relative;
-  text-align: center;
-  top:13px;
-  left:8px;
-}
-
-/* 추가된 부분 */
-.init {
-  animation:none !important;
-}
-
-
-
-/*햄버거 메뉴 드롭 */

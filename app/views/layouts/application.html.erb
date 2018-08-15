@@ -1,55 +1,14 @@
-<!DOCTYPE>
-<html lang="ko">
+<!DOCTYPE html>
+<html>
 <head>
-	
-	<title>WE MAKE UNIQUE - WENIQUE</title>
-	<meta charset="utf-8">
-	<meta name="description" content="새로운 디자인을 스스로 만드는 위니크의 유니크함을 느껴보세요!">
-	<meta name="keywords" content="wenique, 위니크, 디자이너, 창조, 패션, 디자인, 문화">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <!--탭 바 아이콘-->
-	<!--<link rel="shortcut icon" href="http://www.a-land.co.kr/data/aland_data//images/favicon.ico">-->
-	
-	<link rel="stylesheet" type="text/css" href="wenique.css">
-	<link rel="stylesheet" type="text/css" href="registers.css">
-	<link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  
-  <!--부트스트랩 캐러샐-->
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+  <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  
-  
-  
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
-  <div class='bodyyield'>
-    <%= yield %>
-  </div>
-  
-  <%= render 'layouts/footerbar' %>
 
-<!--캐러셀 자바스크립트-->
-<script>
-  $(document).ready(function() {
-  	$('#myCarousel').carousel('cycle');
-  	$('#myCarousel2').carousel('cycle');
-  	$(“.carousel”).carousel({ interval:3000 });
-  });
-</script>
-
-<!--햄버거 메뉴-->
-
-
+<%= yield %>
 
 </body>
 </html>

@@ -1,38 +1,4 @@
 Rails.application.routes.draw do
-  
-  resources :boards, only: [:index] do
-    resources :articles, only: [:update, :destroy]
-  end
-  
-  
-  scope '/boards/:board_id', except: [:update, :destroy] do
-    resources :articles
-  end
-  
-  devise_for :users, :controllers => { :registrations => "registrations" }, :path => "users", :path_names => {:sign_up => "register"}
-  
-  devise_scope :user do
-    get "/users/seller_new" =>"registrations#seller_new"
-    get "/users/sign_out" =>"devise/sessions#destroy"
-  end
-  
-  root 'posts#index'
-  get 'posts/registers_new'
-  get 'posts/index'
-  get 'posts/assign_order'  #지정주문제작 화면
-  get 'posts/unassign_order'  #미지정주문제작 화면
-  get 'posts/maker'  #수공업자 소개 화면
-  get 'posts/my_page' #마이페이지
-  get 'posts/seller_page' #수공업자 개인 페이지
-  get 'posts/user_board' #자유게시판
-  get 'posts/notice' #공지사항
-  
-  # get 'boards/:board_id/articles' => 'articles#index'
-
-  # get 'boards/:board_id/articles/new', to: 'articles#new', as: 'articles'
-
-  
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
