@@ -5,10 +5,155 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link href="font-awesome.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  <link href="colorbox.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="main_styles.css">
+  <link rel="stylesheet" type="text/css" href="responsive.css">
+  
 </head>
 <body>
 
-<%= yield %>
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><a href="#">Wish</a></div>
+			<nav class="main_nav">
+				<ul>
+					<li><a href="/">home</a></li>
+					<li><a href="/wenique/product">product</a></li> <!-- 판매제품 -->
+					<li><a href="/wenique/assign_order/new">order</a></li><!-- 주문제작 -->
+					<li><a href="/wenique/handicrafts">handicrafts</a></li><!-- 수공업자 -->
+					<li><a href="/boards/2/articles">notice</a></li><!-- 공지사항 -->
+				</ul>
+			</nav>
+			<div class="header_content ml-auto">
+				<div class="search header_search">
+					<form action="#">
+						<input type="search" class="search_input" required="required">
+						<button type="submit" id="search_button" class="search_button"><img src="/assets/magnifying-glass.svg" alt=""></button>
+					</form>
+				</div>
+				<div class="shopping">
+					<!-- Cart -->
+					<a href="#">
+						<div class="cart">
+							<img src="/assets/shopping-bag.svg" alt="">
+							<div class="cart_num_container">
+								<div class="cart_num_inner">
+									<div class="cart_num">1</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- Star -->
+					<a href="#">
+						<div class="star">
+							<img src="images/star.svg" alt="">
+							<div class="star_num_container">
+								<div class="star_num_inner">
+									<div class="star_num">0</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!--로그인-->
+				      <% if current_user == nil %>
+				  		<a href="/users/sign_in">LOG IN</a>
+				  		<a href="/wenique/registers_new">SIGN UP</a>
+				        
+				      <% else %>
+				  		<a href="/users/sign_out">LOG OUT</a>
+				  		<a href="/mypage/mypage"><img src="#">MY PAGE</a>
+				      <% end %>
+				
+		
+					<!-- Avatar -->
+					<a href="#">
+						<div class="avatar">
+							<img src="images/avatar.svg" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
+		</div>
+	</header>  
+
+
+	<!-- Menu -->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="logo menu_mm"><a href="#">Wish</a></div>
+		<div class="search">
+			<form action="#">
+				<input type="search" class="search_input menu_mm" required="required">
+				<button type="submit" id="search_button_menu" class="search_button menu_mm"><img class="menu_mm" src="/assets/magnifying-glass.svg" alt=""></button>
+			</form>
+		</div>
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="#">home</a></li>
+				<li class="menu_mm"><a href="#">product</a></li> <!-- 판매제품 -->
+				<li class="menu_mm"><a href="#">order</a></li><!-- 주문제작 -->
+				<li class="menu_mm"><a href="#">hadicrafts</a></li><!-- 수공업자 -->
+				<li class="menu_mm"><a href="#">notice</a></li><!-- 공지사항 -->
+			</ul>
+		</nav>
+	</div>
+
+	<div class="super_container">
+		<%= yield %>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="footer_logo"><a href="#">Wish</a></div>
+					<nav class="footer_nav">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li><a href="categories.html">clothes</a></li>
+							<li><a href="categories.html">accessories</a></li>
+							<li><a href="categories.html">lingerie</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</nav>
+					<div class="footer_social">
+						<ul>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="copyright"</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+<script src="assets/javascripts/jquery-3.2.1.min.js"></script>
+<script src="assets/javascripts/popper.js"></script>
+<script src="assets/javascripts/bootstrap.min.js"></script>
+<script src="assets/javascripts/owl.carousel.js"></script>
+<script src="assets/javascripts/easing.js"></script>
+<script src="assets/javascripts/parallax.min.js"></script>
+<script src="assets/javascripts/jquery.colorbox-min.js"></script>
+<script src="assets/javascripts/custom.js"></script>
 
 </body>
 </html>

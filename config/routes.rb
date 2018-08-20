@@ -1,4 +1,43 @@
 Rails.application.routes.draw do
+  get 'mypage/mypage'
+
+ resources :boards, only: [:index] do
+    resources :articles, only: [:update, :destroy, :create]
+  end
+  
+  scope '/boards/:board_id', except: [:update, :destroy, :create] do
+    resources :articles
+  end
+  
+  devise_for :users, :controllers => { :registrations => "registrations" }, :path => "users", :path_names => {:sign_up => "register"}
+  
+  devise_scope :user do
+    get "/users/seller_new" =>"registrations#seller_new"
+    get "/users/sign_out" =>"devise/sessions#destroy"
+  end
+  
+  root 'wenique#index'
+
+  get 'wenique/product'
+
+  get 'wenique/contact'
+
+  get 'wenique/checkout'
+
+  get 'wenique/categories'
+
+  get 'wenique/cart'
+  
+  get 'wenique/registers_new'
+  
+  get 'wenique/assign_order/new' => 'wenique#assign_order_new' #지정주문제작서 작성 화면
+  
+  post 'wenique/assign_order/create' => 'wenique#assign_order_create', as: 'assign_order_create'
+  
+  get 'wenique/unassign_order'  #미지정주문제작 화면
+  
+  get 'wenique/handicrafts'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

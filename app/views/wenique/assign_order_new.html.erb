@@ -1,0 +1,20 @@
+<h1>Wenique#assign_order_new</h1>
+<%= form_for(@order, url: assign_order_create_path, method: 'post') do |f| %>
+<%= f.label :content, '내용' %>
+<%= f.text_area :content %></br>
+
+<%= f.label :g_private, '완성제품 공개여부' %>
+<%= f.check_box :g_private %></br>
+
+<%= f.label :category_id, '카테고리' %>
+<% @categories.each do |c| %>
+<%= f.check_box :category_ids, { multiple: true }, c.id, false %>
+<%= c.name %>
+<% end %></br>
+
+
+
+<%= f.submit '작성'%>
+<% end %>
+
+

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+boards = Board.create([{title: '자유게시판'}, {title: '공지사항'}])
+categories = Category.create([{name: '가방'}, {name: '가죽'}, {name: '가구'}])
+
+
+    User.create(email: 'admin', password: '123123', name: '관리자',
+                mail: 'admin@1', authorization: 0, business_number: '0',
+                phone_number: '010-1111-1111', address:'0',
+                postcode: '0', details: '0', extra_info: '0')
+                
+
