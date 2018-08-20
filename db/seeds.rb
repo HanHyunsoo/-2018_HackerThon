@@ -15,3 +15,14 @@ categories = Category.create([{name: '가방'}, {name: '가죽'}, {name: '가구
                 postcode: '0', details: '0', extra_info: '0')
                 
 
+    User.create(email: '111', password: '123123', name: '김승래',
+                mail: 'admin@1', authorization: 2, business_number: '0',
+                phone_number: '010-1111-1111', address:'0',
+                postcode: '0', details: '0', extra_info: '0')
+                
+
+
+    User.create(email: '222', password: '123123', name: '박결',
+                mail: 'admin@1', authorization: 1, business_number: '111',
+                phone_number: '010-1111-1111', address:'0',
+                postcode: '0', details: '0', extra_info: '0')
