@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   has_many :followings, through: :active_relationships, source: :following
   has_many :passive_relationships, class_name:  "Relationship", foreign_key: "following_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
+  belongs_to :autority
+  
+  has_one :seller_page
+  has_many :unassign_requests, dependent: :destroy
+  has_many :assign_request_comments, dependent: :destroy
   
   def following?(other_user)
     active_relationships.find_by(following_id: other_user.id)

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: MyString
+  request_id: 1
+  c_check: 1
+
+two:
+  price: MyString
+  request_id: 1
+  c_check: 1

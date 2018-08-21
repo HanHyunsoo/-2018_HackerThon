@@ -1,0 +1,43 @@
+<p>
+  <strong>Content:</strong>
+  <%= @order.content %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <% @order.categories.each do |c| %>
+  <%= c.name %>
+  <% end %>
+</p>
+
+<p>
+<strong>사진:</strong>
+  <%= image_tag("#{@order.img_url}")%>
+</p>
+
+<br>
+<%= link_to 'Edit', "/wenique/assign_order/edit/#{@order.id}" %> <br>
+
+---------------------------------------------------
+<br>
+<%= form_for(@comment, url: assign_order_comment_create_path, method: 'post') do |f| %>
+<%= f.label :content, '내용' %>
+<%= f.text_area :content %></br>
+
+<%= f.submit '작성'%>
+<% end %>
+---------------------------------------------------
+<br>
+<% @order_comments.each do |c| %>
+댓글: <%= c.content %> <%= c.created_at.strftime("%Y-%m-%d  %H:%M:%S") %></br><br>
+<% end %>
+---------------------------------------------------
+<br>
+<% if @current_user_autority == "2" %>
+ <button>가격확정</button>
+<%= link_to 'Invite Team Mates', assign_order_make_price_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
+     <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<% end %>
+
+
+

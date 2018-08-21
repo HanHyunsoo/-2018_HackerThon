@@ -366,6 +366,7 @@ section
 }
 .main_nav ul li a
 {
+	
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #2f2f2f;
@@ -695,6 +696,7 @@ section
 {
 	position: fixed;
 	top: 0;
+	border-left: double 1px #937c6f;
 	right: -400px;
 	width: 400px;
 	height: 100vh;
@@ -859,7 +861,7 @@ section
 	left: 0;
 	width: 100%;
 	text-align: center;
-	background: rgba(35, 35, 35, 0.63);
+	/*background: rgba(35, 35, 35, 0.63);*/
 	padding-bottom: 9px;
 	padding-top: 2px;
 }
@@ -867,7 +869,7 @@ section
 {
 	top: 30%;
 	left: 15px;
-	background: #232323;
+	/*background: #232323;*/
 	padding-left: 10px;
 	text-align: right;
 	padding-right: 22px;
@@ -1224,7 +1226,8 @@ section
 	font-family: 'Lucida', serif;
 	font-size: 36px;
 	font-weight: 700;
-	color: #FFFFFF;
+	/*color: #FFFFFF;*/
+	color: #937c6f;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -1233,7 +1236,7 @@ section
 }
 .gallery_title ul li a:hover
 {
-	color: #937c6f;
+	color: rgb(255, 0, 0);
 }
 .gallery_text
 {

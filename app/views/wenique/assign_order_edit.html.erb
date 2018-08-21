@@ -1,5 +1,5 @@
-<h1>Wenique#assign_order_new</h1>
-<%= form_for(@order, url: assign_order_create_path, method: 'post', :multipart => true) do |f| %>
+<h1>Wenique#assign_order_edit</h1>
+<%= form_for(@order, url: assign_order_update_path, method: 'patch', :multipart => true) do |f| %>
 <%= f.label :content, '내용' %>
 <%= f.text_area :content %></br>
 

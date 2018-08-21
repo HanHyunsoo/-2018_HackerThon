@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ##추가
       t.string :name, null: false   #이름
       t.string :mail, null: false   #이메일
-      t.string :authorization, default: 2 #권한
+      t.string :authorization, default: 3 #권한 (관리자:1, 수공업자:2, 일반사용자:3)
       t.string :business_number, null: true #사업자번호(일반사용자 입력x)
       t.string :phone_number, null: false #핸드폰번호
       t.string :address, null: false      #집주소

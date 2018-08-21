@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s_id: 1
+  c_id: 1
+  price: MyString
+  image_url: MyString
+  content: MyText
+  ar_private: 1
+  ar_order_id: 1
+  ur_order_id: 1
+  ur_private: 1
+  ar_category_id: 1
+  ur_category_id: 1
+
+two:
+  s_id: 1
+  c_id: 1
+  price: MyString
+  image_url: MyString
+  content: MyText
+  ar_private: 1
+  ar_order_id: 1
+  ur_order_id: 1
+  ur_private: 1
+  ar_category_id: 1
+  ur_category_id: 1
