@@ -1,0 +1,36 @@
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
+
+
+
+<h3>Items in order.</h1>
+<div class="datagrid">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantitiy</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @orders.each do |cart| %>
+        <tr>
+          <td align="center"><%= image_tag(cart.good.image_url)%></td>
+          <td><%= cart.item.name %></td>
+          <td><%= cart.item.price %></td>
+          <td align = "center"><%= cart.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>  
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

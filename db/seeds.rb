@@ -28,3 +28,19 @@ autorities = Autority.create([{name: '관리자'}, {name: '수공업자'}, {name
                 mail: 'admin@1', authorization: 2, business_number: '111',
                 phone_number: '010-1111-1111', address:'0',
                 postcode: '0', details: '0', extra_info: '0')
+                
+    User.create(email: '333', password: '123123', name: '이혜민',
+                mail: 'admin@1', authorization: 2, business_number: '222',
+                phone_number: '010-1111-1111', address:'0',
+                postcode: '0', details: '0', extra_info: '0')
+
+
+    Good.create!(s_id:'2', c_id:'1' price:'100', image_url:'1.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'200', image_url:'2.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'300', image_url:'3.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'400', image_url:'4.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'500', image_url:'5.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'600', image_url:'6.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'700', image_url:'7.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'800', image_url:'8.jpg')
+    Good.create!(s_id:'2', c_id:'1' price:'900', image_url:'9.jpg')

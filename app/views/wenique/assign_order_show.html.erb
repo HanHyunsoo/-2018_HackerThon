@@ -34,10 +34,11 @@
 ---------------------------------------------------
 <br>
 <% if @current_user_autority == "2" %>
- <button>가격확정</button>
-<%= link_to 'Invite Team Mates', assign_order_make_price_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
-     <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  <% if @price_check_status.c_check == 'nil'%>
+    <%= link_to '가격확정', assign_order_make_price_path, class: "btn" %>
+  <% elsif @price_check_status.c_check != 'nil' %>
+    <p>가격 제시 완료</p>
 <% end %>
-
+<% end %>
 
 

@@ -15,6 +15,9 @@ class WeniqueController < ApplicationController
   end
 
   def product
+    @goods = Good.all
+    
+    
   end
 
   def contact
@@ -32,12 +35,14 @@ class WeniqueController < ApplicationController
   def assign_order_new
     @categories = Category.all
     @order = AssignRequest.new
+    @sellers = User.where(authorization: 2).order(:name)
   end
   
   def assign_order_create
     @order = AssignRequest.new(order_params)
     @order.content = params[:assign_request][:content]
     @order.c_id = current_user.id
+    @order.s_id = params[:assign_request][:s_id]
     @order.g_private = params[:assign_request][:g_private]
     categories = params[:assign_request][:category_ids].split(',')
     categories.each do |c|
@@ -55,6 +60,7 @@ class WeniqueController < ApplicationController
     @comment = AssignRequestComment.new
     @order_comments = AssignRequestComment.where(request_id: @order.id)
     @current_user_autority = current_user.authorization
+    @price_check_status = PriceComfirm.where(request_id: @order.id).first
 
   end
   
@@ -92,10 +98,34 @@ class WeniqueController < ApplicationController
   end
   
   def assign_order_make_price
+    @price = PriceComfirm.new
+
+  end
+  
+  def assign_order_make_price_create
+    @order = AssignRequest.find(params[:id])
+    @price = PriceComfirm.new
+    @price.price = params[:price_comfirm][:price]
+    @price.request_id = @order.id
+    @order.s_id = current_user.id
+    @order.save
+    @price.save
+    
+    redirect_to "/wenique/assign_order/show/#{@order.id}"
+  end
+  
+  def user_search
+    # @seller = Users.where(authorization = '2')
+    @users = Users.search do
+      keywords params[:query]
+    end.results
+  
     respond_to do |format|
-      format.html
-      format.js
-    end
+      format.html { render :action => "assign_order_new" }
+      format.xml  { render :xml => @users }
+  end
+  
+  redirect_to :back
   end
   
   def unassign_order
@@ -106,7 +136,7 @@ class WeniqueController < ApplicationController
   
 private
     def order_params
-      params.require(:assign_request).permit(:content, :g_private_value, :img_url, category_ids: [])
+      params.require(:assign_request).permit(:content, :s_id, :g_private_value, :img_url, category_ids: [])
     end
     
     def require_login

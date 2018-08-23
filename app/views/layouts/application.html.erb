@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <link href="font-awesome.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="owl.carousel.css">
   <link rel="stylesheet" type="text/css" href="owl.theme.default.css">
@@ -14,6 +14,9 @@
   <link href="colorbox.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="main_styles.css">
   <link rel="stylesheet" type="text/css" href="responsive.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome.css">
+
+
   
 </head>
 <body>
@@ -23,12 +26,19 @@
 
 	<header class="header">
 		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="#">Wish</a></div>
+			<div class="logo"><a href="/"><img src="/assets/logo_2.png" height="80"></a></div>
 			<nav class="main_nav">
 				<ul>
-					<li><a href="/">home</a></li>
-					<li><a href="/wenique/product">product</a></li> <!-- 판매제품 -->
-					<li><a href="/wenique/assign_order/new">order</a></li><!-- 주문제작 -->
+					<!--<li><a href="/">home</a></li>-->
+					<li><%= link_to "product", items_path %></li> <!-- 판매제품 -->
+					<li class="dropdown"><a href="/wenique/assign_order/new">order</a>
+					<!--<i class="icon-angle-down"></i>-->
+						<ul class="dropdown-menu">
+                        	<li><a href="/wenique/assign_order/new">수공업자 지정 주문</a></li>
+                        	<li><a href="/wenique/unassign_order/new">수공업자 미지정 주문</a></li>
+                        	<li><a href="#">주문 제작 확인</a></li>	
+                        </ul>
+					</li><!-- 주문제작 -->
 					<li><a href="/wenique/handicrafts">handicrafts</a></li><!-- 수공업자 -->
 					<li><a href="/boards/2/articles">notice</a></li><!-- 공지사항 -->
 				</ul>
@@ -42,26 +52,23 @@
 				</div>
 				<div class="shopping">
 					<!-- Cart -->
-					<a href="#">
+					
 						<div class="cart">
-							<img src="/assets/shopping-bag.svg" alt="">
-							<div class="cart_num_container">
-								<div class="cart_num_inner">
-									<div class="cart_num">1</div>
-								</div>
-							</div>
+							<%= link_to "My Cart", carts_path %>
+							
+				
 						</div>
 					</a>
 					<!-- Star -->
-					<a href="#">
-						<div class="star">
-							<img src="images/star.svg" alt="">
-							<div class="star_num_container">
-								<div class="star_num_inner">
-									<div class="star_num">0</div>
-								</div>
-							</div>
-						</div>
+					<!--<a href="#">-->
+					<!--	<div class="star">-->
+					<!--		<img src="images/star.svg" alt="">-->
+					<!--		<div class="star_num_container">-->
+					<!--			<div class="star_num_inner">-->
+					<!--				<div class="star_num">0</div>-->
+					<!--			</div>-->
+					<!--		</div>-->
+					<!--	</div>-->
 					</a>
 					<!--로그인-->
 				      <% if current_user == nil %>
@@ -75,11 +82,11 @@
 				
 		
 					<!-- Avatar -->
-					<a href="#">
-						<div class="avatar">
-							<img src="images/avatar.svg" alt="">
-						</div>
-					</a>
+					<!--<a href="#">-->
+					<!--	<div class="avatar">-->
+					<!--		<img src="images/avatar.svg" alt="">-->
+					<!--	</div>-->
+					<!--</a>-->
 				</div>
 			</div>
 
@@ -92,7 +99,7 @@
 
 	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		<div class="logo menu_mm"><a href="#">Wish</a></div>
+		<div class="logo menu_mm"><a href="#">wenique</a></div>
 		<div class="search">
 			<form action="#">
 				<input type="search" class="search_input menu_mm" required="required">
@@ -120,7 +127,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="footer_logo"><a href="#">Wish</a></div>
+					<div class="footer_logo"><a href="#">wenique</a></div>
 					<nav class="footer_nav">
 						<ul>
 							<li><a href="index.html">home</a></li>
@@ -148,7 +155,7 @@
 
 <script src="assets/javascripts/jquery-3.2.1.min.js"></script>
 <script src="assets/javascripts/popper.js"></script>
-<script src="assets/javascripts/bootstrap.min.js"></script>
+<script src="assets/javascripts/bootstrap.js"></script>
 <script src="assets/javascripts/owl.carousel.js"></script>
 <script src="assets/javascripts/easing.js"></script>
 <script src="assets/javascripts/parallax.min.js"></script>

@@ -1,0 +1,23 @@
+<div class="datagrid">
+    <table>
+      <thead>
+        <tr>
+          <th>Total</th>
+          <th align="center">Datetime</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% orders.each do |order| %>
+          <tr>
+            <td><%= order.total %></td>
+
+            <td>
+                <%= link_to 'View', order %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>   

@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
   has_one :seller_page
   has_many :unassign_requests, dependent: :destroy
   has_many :assign_request_comments, dependent: :destroy
+
+  has_many :orders, dependent: :nullify
+  
+  has_many :goods, through: :carts
+  has_many :carts, dependent: :destroy  
+  
   
   def following?(other_user)
     active_relationships.find_by(following_id: other_user.id)

@@ -3,7 +3,7 @@ class CreatePriceComfirms < ActiveRecord::Migration
     create_table :price_comfirms do |t|
       t.string :price
       t.integer :request_id
-      t.integer :c_check
+      t.integer :c_check, default: "0"
 
       t.timestamps null: false
     end

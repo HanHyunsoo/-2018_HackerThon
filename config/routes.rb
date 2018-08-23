@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+
+
+  resources :items
+  resources :carts
+  
   get 'mypage/mypage'
+
+  resources :orders, except: [:create, :new]
+  post 'orders/placeorder' => 'orders#placeorder'
+  get 'allorders' => 'orders#all'
+  
+  get 'cart' => 'carts#index'
+  delete 'cart/:id' => 'carts#deletecart'
+  post 'cart/:id' => 'carts#addcart'
 
  resources :boards, only: [:index] do
     resources :articles, only: [:update, :destroy, :create]
@@ -16,6 +29,9 @@ Rails.application.routes.draw do
     get "/users/sign_out" =>"devise/sessions#destroy"
   end
   
+  
+ 
+
   root 'wenique#index'
 
   get 'wenique/product'
@@ -26,7 +42,6 @@ Rails.application.routes.draw do
 
   get 'wenique/categories'
 
-  get 'wenique/cart'
   
   get 'wenique/registers_new'
   
@@ -43,6 +58,10 @@ Rails.application.routes.draw do
   post 'assign_order/:id/create' => 'wenique#assign_order_comment_create', as: 'assign_order_comment_create'
   
   get 'assign_order/:id/make_price' => 'wenique#assign_order_make_price', as: 'assign_order_make_price'
+  
+  post 'assign_order/:id/make_price/create' => 'wenique#assign_order_make_price_create', as: 'price_create'
+  
+  get '/users/search' => 'wenique#user_search', as: 'search_users'
   
   get 'wenique/unassign_order'  #미지정주문제작 화면
   

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Items</h1>
+<div id="item_collection">
+    <% @items.each do |good| %>
+
+        <a href="<%= root_url + "items/" + good.id.to_s %>">
+          <div id="item">
+            <%= image_tag(good.image_url)%>
+            <%= good.price %>
+            <% if current_user.try(:isadmin?) %>
+              <%= link_to 'Edit', edit_item_path(item) %>
+            <% end %>
+            
+          </div>
+        </a>
+
+
+
+    <% end %>
+  
+</div>
+
+
+<br>
+<% if current_user.try(:isadmin?) %>
+  <%= link_to 'New Item', new_item_path %>
+<% end %>

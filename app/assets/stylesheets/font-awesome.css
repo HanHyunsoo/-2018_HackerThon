@@ -11,6 +11,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.icon-angle-up:before             { content: "\f106"; }
+.icon-angle-down:before           { content: "\f107"; }
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;

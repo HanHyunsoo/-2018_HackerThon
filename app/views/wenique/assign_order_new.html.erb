@@ -1,7 +1,12 @@
 <h1>Wenique#assign_order_new</h1>
-<%= form_for(@order, url: assign_order_create_path, method: 'post', :multipart => true) do |f| %>
+<%= form_for(@order, url: assign_order_create_path, method: 'post', :multipart => true, :onsubmit => "validateCheckbox();") do |f| %>
+
 <%= f.label :content, '내용' %>
 <%= f.text_area :content %></br>
+
+<%= f.label :s_id, '수공업자 지정'%>
+<%= f.collection_select :s_id, @sellers, :id, :name, include_blank: true %><br>
+
 
 <%= f.label :g_private, '완성제품 공개여부' %>
 <%= f.check_box :g_private %></br>
@@ -17,7 +22,7 @@
 <br>
 
 
-<%= f.submit '작성'%>
+<%= f.submit '작성' %>
 <% end %>
 
 

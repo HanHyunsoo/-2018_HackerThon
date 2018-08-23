@@ -1,2 +1,23 @@
-<h1>Wenique#product</h1>
-<p>Find me in app/views/wenique/product.html.erb</p>
+<h1>Products for sale</h1>
+
+<% @goods.each do |good| %>
+	<div class="well">
+		<div class="row">
+			<div class="col-sm-8">
+				<h3><%= good.price %></h3>
+			</div>
+			<div class="col-sm-4">
+				<div class="pull-right">
+				<%= form_tag(@cart, remote: true) do |f| %>
+					
+					<h5><%= good.price %></h5>
+					<div class="form-group">
+						
+					</div>
+					
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

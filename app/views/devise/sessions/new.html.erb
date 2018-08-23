@@ -1,20 +1,30 @@
-<h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login_body">
+  <div class="loginbox">
+    
+  <img src="/assets/my.png" class="avatar">
+    <h1>Login Here</h1>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <P>User ID</P>
+        <input type="text" name="user[email]" required="false">
+        <p>Password</p>
+        <input type="password" name="user[password]" required="false">
+      </div>
+    
+      <div class="form-actions">
+        <%= f.button :submit, "로그인" %>
+        <a her="#"><button> 회원가입 </button></a> 
+      </div>
+      
+      <a href="#">Lost your password?</a><br>
+    <% end %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+

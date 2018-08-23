@@ -15,6 +15,8 @@
 
 ******************************/
 
+
+
 $(document).ready(function()
 {
 	"use strict";
@@ -254,3 +256,24 @@ $(document).ready(function()
 		}
 	}
 });
+
+function validateCheckbox()
+{
+    if( $('#checkbox').attr('checked')){
+      alert("you have to accept the terms first");
+    }
+    else{
+		alert("뭐시여");
+    }
+}
+
+  function checkForm(form)
+  {
+    ...
+    if(!form.assign_request[category_ids][].checked) {
+      alert("Please indicate that you accept the Terms and Conditions");
+      form.terms.focus();
+      return false;
+    }
+    return true;
+  }

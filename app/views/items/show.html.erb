@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag root_url + "cart/" + @item.id.to_s do %>
+
+  <div class="field">
+    <%= link_to image_tag(@item.image_url), @item.image_url %>
+    <%= print @item.image_url %>
+  </div>
+  
+
+  <div class="field">
+    <strong>Price:</strong>
+  <%= @item.price %>
+  </div>
+  <div class="field">
+    <strong>Quantity </strong>
+    <%= number_field_tag :quantity,'1', min: 1 %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag "Add To Cart"%>
+  </div>
+<% end %>
+
+
+<% if current_user.try(:isadmin?) %>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
+<%= link_to 'Back', items_path %>
