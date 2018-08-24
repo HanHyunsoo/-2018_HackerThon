@@ -8,7 +8,7 @@
 
 .order_comment{
     height: 2em;
-    width: 50em;
+    width: 500px;
     border-color: #f9f5f5 ;
 }
 
@@ -41,11 +41,13 @@ form > p{
 }
 
 .comment_button{
-    width: 60px;
-	height: 2em;
+    width: 65px;
+	height: 2.2em;
+	position: absolute;
 	background: #937c6f;
 	text-align: center;
 	color: white;
+	border-radius: 5em;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;

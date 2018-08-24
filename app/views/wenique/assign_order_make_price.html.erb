@@ -1,3 +1,5 @@
+  <link rel="stylesheet" type="text/css" href="order.css">
+
  <%= form_for(@price, url: price_create_path, method: 'post', remote: true) do |f| %>
             <% if @price.errors.any? %>
               <div id="error_explanation">

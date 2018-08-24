@@ -1,22 +1,34 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.each do |u| %>
-        <% if u.authorization == '2' %>
-            <tr>
-              <th scope="row"><%= each.count %></th>
-              <td><%= u.name %></td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-        <% end %>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">이름</th>
+        <th scope="col">의뢰요청 받은횟수</th>
+        <th scope="col">수공업자 페이지</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @i = 1 %>
+      <% @user.each do |u| %>
+          <% if u.authorization == '2' %>
+              <% @a = 0 %>
+              <tr>
+                <th scope="row"><%= @i %></th>
+                <td><%= u.name %></td>
+                <td>
+                    <% @order.each do |e| %>
+                        <% if u.id == e.s_id %>
+                            <% @a = @a + 1 %>
+                        <% end %>
+                    <% end %>
+                    <%= @a %>
+                </td>
+                <td>주소</td>
+              </tr>
+              <% @i = @i + 1 %>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

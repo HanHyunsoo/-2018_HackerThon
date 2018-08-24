@@ -70,15 +70,14 @@ div.content {
     </div>
     
     <div class="content">
-        <h1>주문 내역</h1>
-        <%= render partial: 'order', locals: {orders: @orders} %>
-        <br>
+        <h1>의뢰 내역</h1>
+        <% @requests.each do |request| %>
+        <tr>
+            <td><%=request.content</td>
+        </tr>
+        
+    
     </div>
 </div>
 </body>
 </html>
-
-
-<!--<div class="container">-->
-
-<!--</div>-->

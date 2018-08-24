@@ -22,20 +22,28 @@
 <%= link_to 'Edit', "/wenique/assign_order/edit/#{@order.id}" %>
 </button><br>
 
----------------------------------------------------
-<br>
-<%= form_for(@comment, url: assign_order_comment_create_path, method: 'post') do |f| %>
-<%= f.label :content, '댓글' %><br>
-<%= f.text_area :content,{:class => "order_comment"} %>
+<hr>
 
-<%= f.submit '작성', :class => 'comment_button'%>
+<br>
+ <div class="inline fields">
+  <%= form_for(@comment, url: assign_order_comment_create_path, method: 'post') do |f| %>
+  <%= f.label :content, '댓글' %><br>
+  <div class="field">
+  <%= f.text_area :content,{:class => "order_comment"} %>
+  <%= f.submit '작성', :class => 'comment_button'%>
+  </div>
 <% end %>
----------------------------------------------------
+</div>
+<hr>
+
 <br>
 <% @order_comments.each do |c| %>
 댓글: <%= c.content %> <%= c.created_at.strftime("%Y-%m-%d  %H:%M:%S") %></br><br>
 <% end %>
----------------------------------------------------
+<% unless @order_comments == [] %>
+  <hr>
+<% end %>
+
 <br>
 <% if @current_user_autority == @order.s_id %> 
     <% if @price_check_status.c_check == 0 %>
@@ -45,7 +53,7 @@
     <% end %>
 <% elsif @current_user_autority == @order.c_id%>
    <% if @price_check_status.c_check == 0 %>
-      <p>가격 미정</p>
+      <p class='btn'>가격 미정</p>
     <% elsif %>
       <p><%= @price_check_status.price %></p>
     <% end %>

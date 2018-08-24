@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :carts
   
   get 'mypage/mypage'
+  get 'mypage/request'
 
   resources :orders, except: [:create, :new]
   post 'orders/placeorder' => 'orders#placeorder'

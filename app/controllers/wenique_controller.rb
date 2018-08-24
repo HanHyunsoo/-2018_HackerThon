@@ -135,6 +135,7 @@ class WeniqueController < ApplicationController
   
   def handicrafts
     @user = User.all
+    @order = AssignRequest.all
   end
   
 private

@@ -63,7 +63,7 @@
 					<!-- Cart -->
 					
 						<span class="cart">
-							<%= link_to "MY CART", carts_path %>
+							<%= link_to "MY CART", carts_path %> |
 						</span>
 				
 					<!-- Star -->
@@ -79,11 +79,11 @@
 					<!--</a>-->
 					<!--로그인-->
 				      <% if current_user == nil %>
-				  		<a href="/users/sign_in">LOG IN</a>
+				  		<a href="/users/sign_in">LOG IN</a>|
 				  		<a href="/wenique/registers_new">SIGN UP</a>
 				        
 				      <% else %>
-				  		<a href="/users/sign_out">LOG OUT</a>
+				  		<a href="/users/sign_out">LOG OUT</a>|
 				  		<a href="/mypage/mypage"><img src="/assets/mypage.png" height="20">MY PAGE</a>
 				      <% end %>
 				
@@ -127,40 +127,8 @@
 	<div class="super_container">
 		<%= yield %>
 		<%= javascript_include_tag 'application' %>
+
 	</div>
-
-	<!-- Footer -->
-
-	<!--<footer class="footer">-->
-	<!--	<div class="container">-->
-	<!--		<div class="row">-->
-	<!--			<div class="col text-center">-->
-	<!--				<div class="footer_logo"><a href="#">wenique</a></div>-->
-	<!--				<nav class="footer_nav">-->
-	<!--					<ul>-->
-	<!--						<li><a href="index.html">home</a></li>-->
-	<!--						<li><a href="categories.html">clothes</a></li>-->
-	<!--						<li><a href="categories.html">accessories</a></li>-->
-	<!--						<li><a href="categories.html">lingerie</a></li>-->
-	<!--						<li><a href="contact.html">contact</a></li>-->
-	<!--					</ul>-->
-	<!--				</nav>-->
-	<!--				<div class="footer_social">-->
-	<!--					<ul>-->
-	<!--						<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>-->
-	<!--						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
-	<!--						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>-->
-	<!--						<li><a href="#"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a></li>-->
-	<!--						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
-	<!--					</ul>-->
-	<!--				</div>-->
-	<!--				<div class="copyright"</div>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</footer>-->
-
-<!--New Footer-->
 
     <footer>
       <div class="container">
@@ -193,7 +161,7 @@
             <div class="widget">
               <h5 class="widgetheading">Flickr photostream</h5>
               <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+                <!--<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>-->
               </div>
               <div class="clear">
               </div>
@@ -218,7 +186,8 @@
     </footer>
 
 
-
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 <script src="assets/javascripts/jquery-3.2.1.min.js"></script>
 <script src="assets/javascripts/popper.js"></script>
 <script src="assets/javascripts/bootstrap.js"></script>
@@ -227,8 +196,7 @@
 <script src="assets/javascripts/parallax.min.js"></script>
 <script src="assets/javascripts/jquery.colorbox-min.js"></script>
 <script src="assets/javascripts/custom.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+
 
 
 </body>
