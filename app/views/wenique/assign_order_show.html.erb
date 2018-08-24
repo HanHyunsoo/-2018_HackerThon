@@ -1,19 +1,19 @@
  <link rel="stylesheet" type="text/css" href="order.css">
 <container class="ordershow">
 <p>
-  <strong>Content:</strong>
+  <strong>주문 요청 내용</strong><br>
   <%= @order.content %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>카테고리</strong><br>
   <% @order.categories.each do |c| %>
   <%= c.name %>
   <% end %>
 </p>
 
 <p>
-<strong>사진:</strong>
+<strong>디자인 이미지</strong><br>
   <%= image_tag("#{@order.img_url}",class:"orderimg")%>
 </p>
 
@@ -27,9 +27,9 @@
 <br>
  <div class="inline fields">
   <%= form_for(@comment, url: assign_order_comment_create_path, method: 'post') do |f| %>
-  <%= f.label :content, '댓글' %><br>
+  <%= f.label :content, '가격 협상 댓글' %><br>
   <div class="field">
-  <%= f.text_area :content,{:class => "order_comment"} %>
+  <%= f.text_area :content,{:class => "order_comment", :placeholder =>"댓글에서 가격 및 제작 요건에 대해 협의해주세요"} %>
   <%= f.submit '작성', :class => 'comment_button'%>
   </div>
 <% end %>
@@ -46,16 +46,24 @@
 
 <br>
 <% if @current_user_autority == @order.s_id %> 
-    <% if @price_check_status.c_check == 0 %>
-      <%= link_to '가격확정', assign_order_make_price_path, class: "btn" %>
+    <% if @price_check_status.price == nil %>
+      <%= link_to '가격확정하기', assign_order_make_price_path, class: "btn" %>
     <% elsif %>
       <p><%= @price_check_status.price %></p>
+      <% if @price_check_status.c_check == 1%>
+            <p class="btn"> 가격 협상 완료</p>
+      <% end%>
     <% end %>
 <% elsif @current_user_autority == @order.c_id%>
-   <% if @price_check_status.c_check == 0 %>
+   <% if @price_check_status.price == nil %>
       <p class='btn'>가격 미정</p>
     <% elsif %>
-      <p><%= @price_check_status.price %></p>
+      <p><%= @price_check_status.price %>원</p>
+      <% if @price_check_status.c_check == 0 %>
+      <button><%= link_to '정해진 가격 동의', "/assign_order/#{@order.id}/price_agree" %></button>
+      <% else %>
+      <p class="btn"> 가격 협상 완료</p>
+      <% end %>
     <% end %>
 <% end %>
 

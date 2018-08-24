@@ -1,18 +1,9 @@
   <link rel="stylesheet" type="text/css" href="order.css">
-
- <%= form_for(@price, url: price_create_path, method: 'post', remote: true) do |f| %>
-            <% if @price.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@price.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-                <ul>
-                  <% @price.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
+ <container class="makeprice">
+ <%= form_for(@price, url: price_create_path, method: 'post') do |f| %>
+           
           <%= f.label :price, '가격' %>
           <%= f.text_field :price %></br>
-          <%= f.submit '확정'%>
-          <% end %>
+          <%= f.submit '확정', :class => 'button'%>
+  <% end %>
+  </container>

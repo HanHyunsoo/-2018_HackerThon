@@ -43,12 +43,12 @@ class WeniqueController < ApplicationController
     @order.s_id = params[:assign_request][:s_id]
     @order.g_private = params[:assign_request][:g_private]
     
-
-      categories = params[:assign_request][:category_ids].split(',')
-      categories.each do |c|
-        @order.category_ids << c
-      end
+    categories = params[:assign_request][:category_ids].split(',')
+    categories.each do |c|
+      @order.category_ids << c
+    end
     @order.save
+    
     PriceComfirm.new(request_id: @order.id).save
     
     redirect_to "/wenique/assign_order/show/#{@order.id}"
@@ -112,6 +112,16 @@ class WeniqueController < ApplicationController
     @order.s_id = current_user.id
     @order.save
     @price.save
+    
+    redirect_to "/wenique/assign_order/show/#{@order.id}"
+  end
+  
+  def price_agree
+    @order = AssignRequest.find(params[:id])
+    @price = PriceComfirm.where(request_id: @order.id).first
+    @price.c_check = 1
+    @price.save
+    @goods = Good.new()
     
     redirect_to "/wenique/assign_order/show/#{@order.id}"
   end

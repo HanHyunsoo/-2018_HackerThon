@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
   has_many :goods, through: :carts
   has_many :carts, dependent: :destroy  
   
-  
   def following?(other_user)
     active_relationships.find_by(following_id: other_user.id)
   end

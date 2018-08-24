@@ -90,15 +90,12 @@ ActiveRecord::Schema.define(version: 20180823134621) do
   create_table "goods", force: :cascade do |t|
     t.integer  "s_id"
     t.integer  "c_id"
-    t.float    "price"
+    t.string   "price"
     t.string   "image_url"
     t.text     "content"
     t.integer  "ar_private"
     t.integer  "ar_order_id"
-    t.integer  "ur_order_id"
-    t.integer  "ur_private"
     t.integer  "ar_category_id"
-    t.integer  "ur_category_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

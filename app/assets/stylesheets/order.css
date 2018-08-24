@@ -12,10 +12,13 @@
     border-color: #f9f5f5 ;
 }
 
-
-#new_assign_request, .edit_assign_request, .ordershow{
-    text-align: center;
+*{
     font-family: 'Godo';
+
+}
+
+#new_assign_request, .edit_assign_request, .ordershow, .makeprice{
+    text-align: center;
 }
 
 .ordershow{

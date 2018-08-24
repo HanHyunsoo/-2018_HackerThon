@@ -63,7 +63,7 @@ div.content {
 <div class="container">
     <div class="sidebar">
       
-      <a href="/mypage/request">의뢰내역</a>
+      <a href="/mypage/request_list">의뢰내역</a>
       <%= link_to "주문내역", orders_path %>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
@@ -73,8 +73,9 @@ div.content {
         <h1>의뢰 내역</h1>
         <% @requests.each do |request| %>
         <tr>
-            <td><%=request.content</td>
+            <td><%=request.content%></td>
         </tr>
+        <%end%>
         
     
     </div>

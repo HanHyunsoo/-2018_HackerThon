@@ -1540,7 +1540,7 @@ ul.social-network li {
 	font-weight: bold;
 }
 
-.loginbox input, button{
+.loginbox input, .loginbox button{
 	width: 100%;
 	margin-bottom: 20px;
 }
@@ -1557,7 +1557,7 @@ ul.social-network li {
 	
 }
 
-.loginbox input[type="submit"], button{
+.loginbox input[type="submit"], .loginbox button{
 	border: none;
 	outline: none;
 	height: 40px;
@@ -1590,10 +1590,6 @@ ul.social-network li {
 
 
 /*회원가입 종류 선택 버튼*/
-
-
-
-
 
 
 /*signup*/
@@ -1629,11 +1625,12 @@ ul.social-network li {
 	white-space:nowrap
 }
 
-.signupbox input, button{
+.signupbox input, .signupbox button{
 	width: 100%;
 	margin-bottom: 20px;
 	white-space:nowrap
 }
+
 
 .signupbox input[type="text"], input[type="password"], input[type="email"]
 {
@@ -1647,7 +1644,7 @@ ul.social-network li {
 	
 }
 
-.signupbox input[type="submit"], button{
+.signupbox input[type="submit"], .signupbox button{
 	border: none;
 	outline: none;
 	height: 40px;

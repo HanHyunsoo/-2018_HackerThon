@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :carts
   
   get 'mypage/mypage'
-  get 'mypage/request'
+  get 'mypage/requests_list'
 
   resources :orders, except: [:create, :new]
   post 'orders/placeorder' => 'orders#placeorder'
@@ -61,6 +61,8 @@ Rails.application.routes.draw do
   get 'assign_order/:id/make_price' => 'wenique#assign_order_make_price', as: 'assign_order_make_price'
   
   post 'assign_order/:id/make_price/create' => 'wenique#assign_order_make_price_create', as: 'price_create'
+  
+  get 'assign_order/:id/price_agree' => 'wenique#price_agree'
   
   get '/users/search' => 'wenique#user_search', as: 'search_users'
   
