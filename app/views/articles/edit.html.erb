@@ -1,6 +1,10 @@
-<h1>Editing Article</h1>
+<link rel="stylesheet" type="text/css" href="article.css">
+
+<div class="container">
+<h1>글 수정</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', [@board, @article] %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to '글보기', [@board, @article] %> |
+<%= link_to '목록', articles_path %>
+</div>

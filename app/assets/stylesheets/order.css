@@ -3,7 +3,10 @@
 .order_textarea{
     height: 350px;
     width: 50em;
-    border-color: #f9f5f5 ;
+    border-bottom: 1px solid;
+    /*border-color: #f9f5f5 ;*/
+    border-color: #937c6f ;
+    background-color: #f9f5f5 ;
 }
 
 .order_comment{

@@ -1,22 +1,24 @@
+<link rel="stylesheet" type="text/css" href="article.css">
+
 <div class="container">
   <p id="notice"><%= notice %></p>
   
   <p>
-    <strong>Title:</strong>
+    <strong>제목</strong><br>
     <%= @article.title %>
   </p>
   
   <p>
-    <strong>Content:</strong>
+    <strong>내용</strong><br>
     <%= @article.content %>
   </p>
   <p>
-    <strong>사진:</strong>
-    <%= image_tag("#{@article.img_url}")%>
+    <!--<strong>사진</strong><br>-->
+    <%= image_tag("#{@article.img_url}",class:"orderimg")%>
   </p>
 
 
-  <%= link_to 'Edit', edit_article_path(@board, @article) %> |
-  <%= link_to 'Back', articles_path %> |
-  <%= link_to 'Destroy', [@board, @article] , method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+  <%= link_to '편집', edit_article_path(@board, @article) %> |
+  <%= link_to '뒤로가기', articles_path %> |
+  <%= link_to '삭제', [@board, @article] , method: :delete ,data: { confirm: 'Are you sure?' } %></td>
 </div>

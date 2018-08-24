@@ -37,7 +37,7 @@
       <th scope="col">제목</th>
       <% if user_signed_in? %>
         <% if current_user.authorization == '1' %>
-          <th scope="col">어드민 권한</th>
+          <th scope="col"></th>
         <% end %>
       <% end %>
     </tr>
@@ -52,7 +52,7 @@
             <% if current_user.authorization == '1' %>
               <td>
                 <%= link_to '편집', edit_article_path(@board, article) %> |
-                <%= link_to '삭제', [@board, article] , method: :delete ,data: { confirm: '정말 삭제하시겠습니까?' } %>
+                <%= link_to '삭제', [@board, article] , method: :delete %>
               </td>
             <% end %>
           <% end %>
@@ -62,5 +62,7 @@
     <% end %>
   </table>
   <br>
-  <%= link_to '공지사항 글쓰기', new_article_path %>
+  <button class="button">
+  <%= link_to "#{@board.title} 글쓰기", new_article_path%>
+  </button>
 </div>

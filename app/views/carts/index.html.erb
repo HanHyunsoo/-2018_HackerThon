@@ -17,14 +17,14 @@
             <td ><%= image_tag(cart.good.image_url)%></td>
             <td><%= cart.good.price %></td>
             <td ><%= cart.quantity %></td>
-            <td><%= link_to '취소', root_url + "cart/" + cart.id.to_s , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '취소', root_url + "cart/" + cart.id.to_s , method: :delete %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
 
-  <td><%= link_to '주문하기', root_url + "orders/placeorder", method: :post, data: { confirm: '주문하시겠습니까?' } %></td>
+  <td><%= link_to '주문하기', root_url + "orders/placeorder", method: :post %></td>
 </div>
 
 

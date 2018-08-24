@@ -386,6 +386,9 @@ section
 	color: #937c6f;
 }
 
+.shopping a:hover{
+	color: #937c6f;
+}
 /*********************************
 3.3 Header - Search
 *********************************/
@@ -1433,69 +1436,47 @@ section
 12. Footer
 *********************************/
 
+footer{
+	margin-top: 60px;
+	height: 240px;
+	background-color: rgb(100,100,100);
+	color: rgb(230,230,230);
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+}
 
+#footer_logo{
+	font-size: 50px;
+	color: rgb(230,230,230);
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
 
-.container{
+.footer_div{
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-size: 30px;
+	height: 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#footer_p{
+	font-size: 20px;
+	text-align: center;
+	color: rgb(230,230,230);
+}
+
+.footer_con p{
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 5px;
+	color: rgb(230,230,230);
+	margin-left: 40px;
+}
 	
-}
-
-footer ul.link-list li a {
-  color: #fff;
-}
-footer .widgetheading {
-  position: relative;
-}
-footer .widget .social-network {
-  position: relative;
-}
-
-footer .widget .widgetheading span {
-  position: absolute;
-  width: 60px;
-  height: 1px;
-  bottom: -1px;
-  right: 0;
-}
-footer .widget .flickr_badge {
-  width: 100%;
-}
-footer .widget .flickr_badge img {
-  margin: 0 9px 20px 0;
-}
-
-footer {
-  background: gray;
-  padding: 50px 0 0 0;
-  color: #fff;
-}
-
-footer a {
-  color: #eee;
-}
-
-footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
-  color: #eee;
-}
-
-footer address {
-  line-height: 1.6em;
-}
-
-footer h5 a:hover, footer a:hover {
-  text-decoration: none;
-}
-
-ul.social-network {
-  list-style: none;
-  margin: 0;
-}
-
-ul.social-network li {
-  display: inline;
-}
-
-
-
 /*로그인과 회원가입*/
 
 .login_body{
@@ -1603,7 +1584,7 @@ ul.social-network li {
 	height: 1000px;
 	background: #f9f5f5;
 	color: #fff;
-	top: 45%;
+	top: 50%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -1655,11 +1636,12 @@ ul.social-network li {
 	
 }
 
-.signupbox input[type="submit"]:hover, button:hover
+.signupbox input[type="submit"]:hover, .sigupbox button:hover
 {
 	cursor: pointer;
 	background: #fff;
 	color: #937c6f;
+
 }
 
 .signupbox a{

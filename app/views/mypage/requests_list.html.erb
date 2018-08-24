@@ -2,19 +2,40 @@
 <div class="container">
     <div class="sidebar">
       
-      <a href="/mypage/request_list">의뢰내역</a>
+      <a href="/mypage/requests_list">의뢰내역</a>
       <%= link_to "주문내역", orders_path %>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+
     </div>
     
     <div class="content">
         <h1>의뢰 내역</h1>
+          <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">내용</th>
+        <th scope="col">페이지</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @i=1 %>
         <% @requests.each do |request| %>
-        <tr>
-            <td><%=request.content%></td>
-        </tr>
+          <tr>
+              <td><%=@i%></td>
+              <td><%=request.content%></td>
+              <td><a href="assign_order/show/<%=request.id%>">보기</a></td>
+              <% @i = @i+1 %>
+          </tr>
         <%end%>
+        
+ 
+    </tbody>
+  </table>
+        
+        
+        
+        
+  
         
     
     </div>
