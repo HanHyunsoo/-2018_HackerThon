@@ -1,28 +1,30 @@
-<h1>Your Cart</h1>
-<div class="datagrid">
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantitiy</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @cart.each do |cart| %>
+<div class="container">
+  <h1>Your Cart</h1>
+  <div class="datagrid">
+    <table>
+      <thead>
         <tr>
-          <td align="center"><%= image_tag(cart.good.image_url)%></td>
-          <td><%= cart.good.image_url %></td>
-          <td><%= cart.good.price %></td>
-          <td align = "center"><%= cart.quantity %></td>
-          <td><%= link_to 'Remove', root_url + "cart/" + cart.id.to_s , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantitiy</th>
+          <th colspan="1"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+    
+      <tbody>
+        <% @cart.each do |cart| %>
+          <tr>
+            <td align="center"><%= image_tag(cart.good.image_url)%></td>
+            <td><%= cart.good.image_url %></td>
+            <td><%= cart.good.price %></td>
+            <td align = "center"><%= cart.quantity %></td>
+            <td><%= link_to 'Remove', root_url + "cart/" + cart.id.to_s , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
+  <td><%= link_to '주문하기', root_url + "orders/placeorder", method: :post, data: { confirm: '주문하시겠습니까?' } %></td>
 </div>
-
-<td><%= link_to 'Place Order', root_url + "orders/placeorder", method: :post, data: { confirm: 'Place order?' } %></td>

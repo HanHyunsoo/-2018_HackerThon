@@ -22,8 +22,8 @@
       <% @orders.each do |cart| %>
         <tr>
           <td align="center"><%= image_tag(cart.good.image_url)%></td>
-          <td><%= cart.item.name %></td>
-          <td><%= cart.item.price %></td>
+          <td><%= cart.good.image_url %></td>
+          <td><%= cart.good.price %></td>
           <td align = "center"><%= cart.quantity %></td>
         </tr>
       <% end %>

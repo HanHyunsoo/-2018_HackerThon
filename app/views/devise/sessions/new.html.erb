@@ -7,24 +7,20 @@
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <P>User ID</P>
-        <input type="text" name="user[email]" required="false">
+        <input type="text" name="user[email]" placeholler="아이디">
         <p>Password</p>
-        <input type="password" name="user[password]" required="false">
+        <input type="password" name="user[password]" required="false" placeholler="비밀번호">
       </div>
     
       <div class="form-actions">
-        <%= f.button :submit, "로그인" %>
-        <a her="#"><button> 회원가입 </button></a> 
+        <input type="submit" name="user[submit]" value="로그인">
+        <a her="#"><button> 회원가입 </button></a><br>
+        <a href="#">비밀번호를 잊으셨나요?</a><br>
       </div>
-      
-      <a href="#">Lost your password?</a><br>
     <% end %>
   </div>
 
 
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+
 

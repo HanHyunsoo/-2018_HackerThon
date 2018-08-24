@@ -16,9 +16,52 @@
 ******************************/
 
 
-
+// 왜안될까 현수야 대표님 굳 ㅋ
 $(document).ready(function()
 {
+	
+	// function checkForm(form)
+	//   {
+	//     if(!form.assign_request[category_ids].checked) {
+	//       alert("Please indicate that you accept the Terms and Conditions");
+	//       form.assign_request[category_ids].focus();
+	//       return false;
+	//     }
+	//     return true;
+	//   }
+	  
+	   function validateCheckbox()
+		{
+			// 방법1
+			// var isSeasonChk = $("input:checkbox[name='category_ids[]']").is(":checked");
+    
+	  //      if(!isSeasonChk){
+	  //          alert("계절의 종류를 한개 이상 선택해주세요.");
+	  //          return false;
+	  //      }
+
+
+			// 방법2
+			var isSeasonChk = false;
+        	var arr_Season = document.getElementsByName("assign_request[category_ids][]");
+        		for(var i=0;i<arr_Season.length;i++){
+            		if(arr_Season[i].checked == true) {
+            		 isSeasonChk = true;
+            			break;
+            		}
+        		}	
+    
+	        if(!isSeasonChk){
+	            alert("계절의 종류를 한개 이상 선택해주세요.");
+	            return false;
+	        }
+
+			// 방법3
+		    // if( $('#catecheck').is(':checked')){
+		    //   alert("you have to accept the terms first");
+		    // }
+		}
+  
 	"use strict";
 
 	/* 
@@ -257,23 +300,25 @@ $(document).ready(function()
 	}
 });
 
-function validateCheckbox()
-{
-    if( $('#checkbox').attr('checked')){
-      alert("you have to accept the terms first");
-    }
-    else{
-		alert("뭐시여");
-    }
-}
+// function validateCheckbox()
+// {
+//     if( $('#checkbox').attr('checked')){
+//       alert("you have to accept the terms first");
+//     }
+//     else{
+// 		alert("뭐시여");
+//     }
+// }
 
-  function checkForm(form)
-  {
-    ...
-    if(!form.assign_request[category_ids][].checked) {
-      alert("Please indicate that you accept the Terms and Conditions");
-      form.terms.focus();
-      return false;
-    }
-    return true;
-  }
+// function checkForm(form)
+//   {
+//     ...
+//     if(!form.assign_request[category_ids][].checked) {
+//       alert("Please indicate that you accept the Terms and Conditions");
+//       form.assign_request[category_ids][].focus();
+//       return false;
+//     }
+//     return true;
+//   }
+
+ 

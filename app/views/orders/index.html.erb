@@ -1,3 +1,76 @@
-<h1>Your Orders</h1>
-<%= render partial: 'order', locals: {orders: @orders} %>
-<br>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+    height: 600px;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fbfafa;
+    overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+    background-color: gary;
+    color: black;
+}
+
+/* Style the content */
+.content {
+    position: absolute;
+    top: 60px;
+    
+    right: 600px;
+    width: 300px;
+    height: 200px;
+    /*padding-bottom: 100px;*/
+    /*margin-left: 200px;*/
+    /*padding-left: 20px;*/
+}
+</style>
+</head>
+<body>
+<div class="container">
+    
+    <div class="sidenav">
+      <%= link_to "주문내역", orders_path %>
+      <%= link_to "장바구니", carts_path %>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      
+      <a href="#">Link</a>
+    </div>
+  
+    
+    <div class="content">
+        <h1>Your Orders</h1>
+        <%= render partial: 'order', locals: {orders: @orders} %>
+        <br>
+    </div>
+</div>
+</body>
+<!--<div class="container">-->
+
+<!--</div>-->

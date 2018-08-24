@@ -50,6 +50,8 @@
 		 url('../fonts/beyond_the_mountains.ttf')  format('truetype');
 }
 
+@font-face { font-family: 'Godo'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff'); } @font-face { font-family: 'Godo'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff'); } .godo * { font-family: 'Godo', sans-serif; }
+
 /*********************************
 2. Body and some general stuff
 *********************************/
@@ -232,6 +234,7 @@ section
 	width: 100%;
 	overflow: hidden;
 	margin-top: 100px; /*바디 부분이 안보여서 임의로 지정*/
+	min-height: 700px;
 }
 .prlx_parent
 {
@@ -293,7 +296,7 @@ section
 }
 .button:hover
 {
-	background: #e0e3e4;
+	background: #f9f5f5;
 }
 .button:hover a
 {
@@ -358,7 +361,7 @@ section
 .main_nav ul li
 {
 	display: inline-block;
-	margin-right: 50px;
+	margin-right: 35px;
 }
 .main_nav ul li:last-child
 {
@@ -466,6 +469,9 @@ section
 	background: #937c6f;
 	border-radius: 50%;
 }
+.cart{
+	margin-left: 10px;
+}
 .cart_num_inner,
 .star_num_inner
 {
@@ -550,8 +556,10 @@ section
 
 .home_slider_container
 {
-	width: 100%;
+	width: 80%;
 	height: 100%;
+	position: absolute;
+	transform: translate(12%);
 }
 .home_slider_background
 {
@@ -1425,100 +1433,163 @@ section
 12. Footer
 *********************************/
 
-.footer
-{
-	padding-top: 80px;
+/*.footer*/
+/*{*/
+/*	padding-top: 80px;*/
+/*}*/
+/*.footer_logo a*/
+/*{*/
+/*	font-family: 'Lucida', serif;*/
+/*	font-size: 60px;*/
+/*	color: #232323;*/
+/*}*/
+/*.footer_nav*/
+/*{*/
+/*	margin-top: 14px;*/
+/*}*/
+/*.footer_nav ul li*/
+/*{*/
+/*	display: inline-block;*/
+/*	margin-right: 53px;*/
+/*}*/
+/*.footer_nav ul li:last-child*/
+/*{*/
+/*	margin-right: 0;*/
+/*}*/
+/*.footer_nav ul li a*/
+/*{*/
+/*	font-size: 12px;*/
+/*	text-transform: uppercase;*/
+/*	color: #232323;*/
+/*	font-weight: 600;*/
+/*	letter-spacing: 0.2em;*/
+/*	-webkit-transition: all 200ms ease;*/
+/*	-moz-transition: all 200ms ease;*/
+/*	-ms-transition: all 200ms ease;*/
+/*	-o-transition: all 200ms ease;*/
+/*	transition: all 200ms ease;*/
+/*}*/
+/*.footer_nav ul li a:hover*/
+/*{*/
+/*	color: #937c6f;*/
+/*}*/
+/*.footer_social*/
+/*{*/
+/*	margin-top: 51px;*/
+/*}*/
+/*.footer_social ul li*/
+/*{*/
+/*	display: inline-block;*/
+/*	margin-right: 36px;*/
+/*}*/
+/*.footer_social ul li:last-child*/
+/*{*/
+/*	margin-right: 0;*/
+/*}*/
+/*.footer_social ul li a i*/
+/*{*/
+/*	font-size: 24px;*/
+/*	color: #937c6f;*/
+/*	-webkit-transition: all 200ms ease;*/
+/*	-moz-transition: all 200ms ease;*/
+/*	-ms-transition: all 200ms ease;*/
+/*	-o-transition: all 200ms ease;*/
+/*	transition: all 200ms ease;*/
+/*}*/
+/*.footer_social ul li a i:hover*/
+/*{*/
+/*	color: #e0e3e4;*/
+/*}*/
+/*.copyright*/
+/*{*/
+/*	margin-top: 56px;*/
+/*	padding-bottom: 13px;*/
+/*	font-family: 'Lucida', serif;*/
+/*	font-size: 12px;*/
+/*	color: #232323;*/
+/*}*/
+
+/*New Footer*/
+
+.container{
+	
 }
-.footer_logo a
-{
-	font-family: 'Lucida', serif;
-	font-size: 60px;
-	color: #232323;
+
+footer ul.link-list li a {
+  color: #fff;
 }
-.footer_nav
-{
-	margin-top: 14px;
+footer .widgetheading {
+  position: relative;
 }
-.footer_nav ul li
-{
-	display: inline-block;
-	margin-right: 53px;
+footer .widget .social-network {
+  position: relative;
 }
-.footer_nav ul li:last-child
-{
-	margin-right: 0;
+
+footer .widget .widgetheading span {
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  bottom: -1px;
+  right: 0;
 }
-.footer_nav ul li a
-{
-	font-size: 12px;
-	text-transform: uppercase;
-	color: #232323;
-	font-weight: 600;
-	letter-spacing: 0.2em;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+footer .widget .flickr_badge {
+  width: 100%;
 }
-.footer_nav ul li a:hover
-{
-	color: #937c6f;
+footer .widget .flickr_badge img {
+  margin: 0 9px 20px 0;
 }
-.footer_social
-{
-	margin-top: 51px;
+
+footer {
+  background: gray;
+  padding: 50px 0 0 0;
+  color: #fff;
 }
-.footer_social ul li
-{
-	display: inline-block;
-	margin-right: 36px;
+
+footer a {
+  color: #eee;
 }
-.footer_social ul li:last-child
-{
-	margin-right: 0;
+
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  color: #eee;
 }
-.footer_social ul li a i
-{
-	font-size: 24px;
-	color: #937c6f;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+
+footer address {
+  line-height: 1.6em;
 }
-.footer_social ul li a i:hover
-{
-	color: #e0e3e4;
+
+footer h5 a:hover, footer a:hover {
+  text-decoration: none;
 }
-.copyright
-{
-	margin-top: 56px;
-	padding-bottom: 13px;
-	font-family: 'Lucida', serif;
-	font-size: 12px;
-	color: #232323;
+
+ul.social-network {
+  list-style: none;
+  margin: 0;
 }
+
+ul.social-network li {
+  display: inline;
+}
+
+
 
 /*로그인과 회원가입*/
 
 .login_body{
-	
-	margin-top: 300px;
+	height: 700px;
 	padding: 0;
 }
 
 .loginbox{
-	width: 320px;
-	height: 420px;
-	background: #000;
+	width: 380px;
+	height: 450px;
+	background: #f9f5f5;
 	color: #fff;
 	top: 50%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
+	padding: 70px 30px;
 }
 
 .avatar{
@@ -1529,4 +1600,66 @@ section
 	top: -50px;
 	left: calc(50% - 50px);
 	
+}
+
+.loginbox h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+	color:  #937c6f;
+}
+
+.loginbox p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.loginbox input, button{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid black;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+	
+}
+
+.loginbox input[type="submit"], button{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #937c6f;
+	color: #fff;
+	font-size: 18px;
+	/*border-radius: 20px;*/
+	
+}
+
+
+.loginbox input[type="submit"]:hover, button:hover
+{
+	cursor: pointer;
+	background: #fff;
+	color: #937c6f;
+}
+
+.loginbox a{
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #937c6f;
+}
+
+.loginbox a:hover
+{
+	color: #000;
 }

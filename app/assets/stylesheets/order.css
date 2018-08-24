@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.order_textarea{
+    height: 350px;
+    width: 50em;
+    border-color: #f9f5f5 ;
+}
+
+#new_assign_request{
+    text-align: center;
+    font-family: 'Godo';
+}
+
+form > label{
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+form > p{
+    margin-bottom: 0px;
+    margin-top: -25px;
+}
+
+#assign_request_img_url{
+    margin-left: 10px;
+}

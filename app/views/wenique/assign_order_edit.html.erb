@@ -1,5 +1,5 @@
 <h1>Wenique#assign_order_edit</h1>
-<%= form_for(@order, url: assign_order_update_path, method: 'patch', :multipart => true) do |f| %>
+<%= form_for(@order, url: assign_order_update_path, method: 'patch', :multipart => true, :class => "order") do |f| %>
 <%= f.label :content, '내용' %>
 <%= f.text_area :content %></br>
 
@@ -12,12 +12,12 @@
 <%= c.name %>
 <% end %></br>
 
-<%= f.label :img_url %>
+<%= f.label :img_url,'디자인 이미지' %>
 <%= f.file_field :img_url %>
 <br>
 
 
-<%= f.submit '작성'%>
+<%= f.submit '작성', :class => "button"%>
 <% end %>
 
 

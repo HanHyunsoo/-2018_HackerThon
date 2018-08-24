@@ -2,8 +2,6 @@ class WeniqueController < ApplicationController
   before_action :require_login, only: [:assign_order_new, :assign_order_show]
   
   def index
-    
-    
     #수공업자 권한부여
     users = User.all
     users.each do |u|
@@ -14,10 +12,9 @@ class WeniqueController < ApplicationController
     end
   end
 
+
   def product
     @goods = Good.all
-    
-    
   end
 
   def contact
@@ -36,6 +33,7 @@ class WeniqueController < ApplicationController
     @categories = Category.all
     @order = AssignRequest.new
     @sellers = User.where(authorization: 2).order(:name)
+    
   end
   
   def assign_order_create
@@ -44,22 +42,23 @@ class WeniqueController < ApplicationController
     @order.c_id = current_user.id
     @order.s_id = params[:assign_request][:s_id]
     @order.g_private = params[:assign_request][:g_private]
-    categories = params[:assign_request][:category_ids].split(',')
-    categories.each do |c|
-      @order.category_ids << c
-    end
     
+ 
+      categories = params[:assign_request][:category_ids].split(',')
+      categories.each do |c|
+        @order.category_ids << c
+      end
     @order.save
+    PriceComfirm.new(request_id: @order.id).save
     
     redirect_to "/wenique/assign_order/show/#{@order.id}"
-    
   end
   
   def assign_order_show
     @order = AssignRequest.find(params[:id])
     @comment = AssignRequestComment.new
     @order_comments = AssignRequestComment.where(request_id: @order.id)
-    @current_user_autority = current_user.authorization
+    @current_user_autority = current_user.id
     @price_check_status = PriceComfirm.where(request_id: @order.id).first
 
   end
@@ -98,15 +97,14 @@ class WeniqueController < ApplicationController
   end
   
   def assign_order_make_price
-    @price = PriceComfirm.new
+    @price = PriceComfirm.where(request_id: params[:id]).first
 
   end
   
   def assign_order_make_price_create
     @order = AssignRequest.find(params[:id])
-    @price = PriceComfirm.new
+    @price = PriceComfirm.where(request_id: @order.id).first
     @price.price = params[:price_comfirm][:price]
-    @price.request_id = @order.id
     @order.s_id = current_user.id
     @order.save
     @price.save
@@ -142,7 +140,7 @@ private
     def require_login
       unless user_signed_in?
       redirect_to '/users/sign_in'
-    end
+      end
     end
   
   

@@ -41,12 +41,12 @@
 {
 	.main_nav
 	{
-		padding-left: 50px;
+		padding-left: 70px;
 	}
 	.shopping
 	{
 		padding-right: 100px;
-		margin-left: 100px;
+		margin-left: 45px;
 	}
 }
 
@@ -59,7 +59,7 @@
 	.shopping
 	{
 		padding-right: 74px;
-		margin-left: 60px;
+		margin-left: 40px;
 	}
 }
 
@@ -71,7 +71,7 @@
 {
 	.main_nav
 	{
-		padding-left: 40px;
+		padding-left: 60px;
 	}
 	.main_nav ul li
 	{

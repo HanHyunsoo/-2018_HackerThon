@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     if @continue == @total_goods
       @user.carts.each  do |cart|
         @total += (cart.good.price * cart.quantity) 
-        cart.updateqty(cart.quantity)
+        
       end
     else
       redirect_to root_url + "cart" and return
@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
     @order = Order.create
     @order.user_id = @user.id
     @user.carts.each do |cart|
-      @goodO = Itemorder.new
+      @goodO = Goodorder.new
       
       @goodO.quantity = cart.quantity
       @goodO.good_id = cart.good_id
