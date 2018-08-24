@@ -6,9 +6,20 @@
     border-color: #f9f5f5 ;
 }
 
-#new_assign_request{
+.order_comment{
+    height: 2em;
+    width: 50em;
+    border-color: #f9f5f5 ;
+}
+
+
+#new_assign_request, .edit_assign_request, .ordershow{
     text-align: center;
     font-family: 'Godo';
+}
+
+.ordershow{
+    display: block;
 }
 
 form > label{
@@ -23,4 +34,46 @@ form > p{
 
 #assign_request_img_url{
     margin-left: 10px;
+}
+
+.orderimg{
+    width: 400px;
+}
+
+.comment_button{
+    width: 60px;
+	height: 2em;
+	background: #937c6f;
+	text-align: center;
+	color: white;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
+
+.comment_button a
+{
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	letter-spacing: 0.2em;
+	line-height: 46px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.comment_button:hover
+{
+	background: #f9f5f5;
+	color: black;
+}
+.comment_button:hover a
+{
+	color: #232323;
 }

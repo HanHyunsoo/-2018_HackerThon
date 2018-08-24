@@ -3,7 +3,7 @@ class AssignRequest < ActiveRecord::Base
     has_one :good
     has_many :assign_request_comments, dependent: :destroy #혜민이한테 물어보기
     mount_uploader :img_url, ImguploaderUploader
-    validates :category_ids, acceptance: true
+    # validates :category_ids, acceptance: true
     # validates_acceptance_of :category_ids, message: 'tick the checkbox!'
     
 

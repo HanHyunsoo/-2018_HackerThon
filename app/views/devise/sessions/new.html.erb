@@ -5,6 +5,7 @@
   <img src="/assets/my.png" class="avatar">
     <h1>Login Here</h1>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
       <div class="form-inputs">
         <P>User ID</P>
         <input type="text" name="user[email]" placeholler="아이디">

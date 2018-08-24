@@ -1,10 +1,10 @@
-<h1>Wenique#assign_order_edit</h1>
+ <link rel="stylesheet" type="text/css" href="order.css">
 <%= form_for(@order, url: assign_order_update_path, method: 'patch', :multipart => true, :class => "order") do |f| %>
-<%= f.label :content, '내용' %>
-<%= f.text_area :content %></br>
+<%= f.label :content, '주문 요청 내용' %><br>
+<%= f.text_area :content,{:class => "order_textarea"} %></br>
 
 <%= f.label :g_private, '완성제품 공개여부' %>
-<%= f.check_box :g_private %></br>
+<%= f.check_box :g_private %><p>주문 제작 완료후 상품 공개&판매를 원하시면 체크해주세요</p></br>
 
 <%= f.label :category_id, '카테고리' %>
 <% @categories.each do |c| %>
@@ -15,7 +15,6 @@
 <%= f.label :img_url,'디자인 이미지' %>
 <%= f.file_field :img_url %>
 <br>
-
 
 <%= f.submit '작성', :class => "button"%>
 <% end %>

@@ -43,7 +43,7 @@ class WeniqueController < ApplicationController
     @order.s_id = params[:assign_request][:s_id]
     @order.g_private = params[:assign_request][:g_private]
     
- 
+
       categories = params[:assign_request][:category_ids].split(',')
       categories.each do |c|
         @order.category_ids << c
@@ -78,6 +78,10 @@ class WeniqueController < ApplicationController
     cate = params[:assign_request][:category_ids].split(',')
     cate.each do |c|
       @order.category_ids = c
+    end
+    
+    unless params[:assign_request][:img_url] == nil
+      @order.img_url = params[:assign_request][:img_url]
     end
 
     @order.save
@@ -130,6 +134,7 @@ class WeniqueController < ApplicationController
   end
   
   def handicrafts
+    @user = User.all
   end
   
 private

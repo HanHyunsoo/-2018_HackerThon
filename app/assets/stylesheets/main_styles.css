@@ -1663,3 +1663,111 @@ ul.social-network li {
 {
 	color: #000;
 }
+
+
+/*회원가입 종류 선택 버튼*/
+
+.choicebox_body{
+	height: 800px;
+	padding: 0px;
+}
+.choicebox{
+	width: 80%;
+	height: 600px;
+	background: rgb(235,235,235);
+	top: 30%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+.choicebox a{
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #937c6f;
+}
+
+/*signup*/
+.signup_body{
+	height: 1200px;
+	padding: 0;
+}
+
+.signupbox{
+	width: 600px;
+	height: 1000px;
+	background: #f9f5f5;
+	color: #fff;
+	top: 45%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+.signupbox h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 40px;
+	color:  #937c6f;
+}
+
+.signupbox p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	white-space:nowrap
+}
+
+.signupbox input, button{
+	width: 100%;
+	margin-bottom: 20px;
+	white-space:nowrap
+}
+
+.signupbox input[type="text"], input[type="password"], input[type="email"]
+{
+	border: none;
+	border-bottom: 1px solid black;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+	
+}
+
+.signupbox input[type="submit"], button{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #937c6f;
+	color: #fff;
+	font-size: 18px;
+	/*border-radius: 20px;*/
+	
+}
+
+.signupbox input[type="submit"]:hover, button:hover
+{
+	cursor: pointer;
+	background: #fff;
+	color: #937c6f;
+}
+
+.signupbox a{
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #937c6f;
+}
+
+.signupbox a:hover
+{
+	color: #000;
+}
+

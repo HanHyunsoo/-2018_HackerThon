@@ -47,9 +47,9 @@ Rails.application.routes.draw do
   
   get 'wenique/assign_order/new' => 'wenique#assign_order_new' #지정주문제작서 작성 화면
   
-  get 'wenique/assign_order/show/:id' => 'wenique#assign_order_show' #지정주문제작서 확인
-  
   post 'wenique/assign_order/create' => 'wenique#assign_order_create', as: 'assign_order_create'
+  
+  get 'wenique/assign_order/show/:id' => 'wenique#assign_order_show' #지정주문제작서 확인
   
   get 'wenique/assign_order/edit/:id' => 'wenique#assign_order_edit'
   

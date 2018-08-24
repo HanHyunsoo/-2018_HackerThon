@@ -1,3 +1,5 @@
+ <link rel="stylesheet" type="text/css" href="order.css">
+<container class="ordershow">
 <p>
   <strong>Content:</strong>
   <%= @order.content %>
@@ -12,19 +14,21 @@
 
 <p>
 <strong>사진:</strong>
-  <%= image_tag("#{@order.img_url}")%>
+  <%= image_tag("#{@order.img_url}",class:"orderimg")%>
 </p>
 
 <br>
-<%= link_to 'Edit', "/wenique/assign_order/edit/#{@order.id}" %> <br>
+<button class="button">
+<%= link_to 'Edit', "/wenique/assign_order/edit/#{@order.id}" %>
+</button><br>
 
 ---------------------------------------------------
 <br>
 <%= form_for(@comment, url: assign_order_comment_create_path, method: 'post') do |f| %>
-<%= f.label :content, '내용' %>
-<%= f.text_area :content %></br>
+<%= f.label :content, '댓글' %><br>
+<%= f.text_area :content,{:class => "order_comment"} %>
 
-<%= f.submit '작성'%>
+<%= f.submit '작성', :class => 'comment_button'%>
 <% end %>
 ---------------------------------------------------
 <br>
@@ -47,4 +51,4 @@
     <% end %>
 <% end %>
 
-
+</container>
