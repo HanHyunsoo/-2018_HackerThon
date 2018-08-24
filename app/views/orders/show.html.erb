@@ -1,36 +1,38 @@
 
-<p>
-  <strong>Total:</strong>
-  <%= @order.total %>
-</p>
 
 
-
-<h3>Items in order.</h1>
-<div class="datagrid">
-  <table>
+<div class="container">
+  <table class="table table-hover">
+    <h1>주문 내역</h1>
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantitiy</th>
-      </tr>
+        <th scope="col">사진</th>
+        <th scope="col">가격</th>
+        <th scope="col">갯수</th>
+      </tr>     
     </thead>
+    
+    
+    
+      <tbody>
+        <% @orders.each do |cart| %>
+          <tr>
+            <td ><%= image_tag(cart.good.image_url)%></td>
+            <td><%= cart.good.price %></td>
+            <td ><%= cart.quantity %></td>
+            <td><%= link_to '취소', root_url + "cart/" + cart.id.to_s , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> 
   
-    <tbody>
-      <% @orders.each do |cart| %>
-        <tr>
-          <td align="center"><%= image_tag(cart.good.image_url)%></td>
-          <td><%= cart.good.image_url %></td>
-          <td><%= cart.good.price %></td>
-          <td align = "center"><%= cart.quantity %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>  
+    <p>
+      <strong>Total:</strong>
+      <%= @order.total %>
+    </p>
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+
+
+  <%= link_to '뒤로가기', orders_path %>
+</div>

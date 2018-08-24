@@ -1,4 +1,9 @@
 <!--일반사용자 회원가입-->
+<style>
+  button {
+    width: 10px;
+  }
+</style>
 
 
 <!--일단 꾸미는건 나중에-->
@@ -27,18 +32,35 @@
      
          
         <!-- 검색 기능을 표시할 <div>를 생성한다 -->
-      
-        <div id="postcodify"></div>
+        <!--<div id="postcodify"></div>-->
         
         <!-- 주하고 적당한 name과 id를 부여한다 -->
         <input type="text" name="user[postcode]" id="소와 우편번호를 입력할 <input>들을 생성postcode" value="" /><br />
         <input type="text" name="user[address]" id="address" value="" /><br />
         <input type="text" name="user[details]" id="details" value="" /><br />
         <input type="text" name="user[extra_info]" id="extra_info" value="" /><br />
+  
+  
         <!--완료 버튼-->
         <input type="submit" name="user[submit]" value="완료">
         <!-- jQuery와 Postcodify를 로딩한다 -->
 
+        <!--<div id="postcodify"></div>-->
+        
+        <!-- 위에서 생성한 <div>에 검색 기능을 표시하고, 결과를 입력할 <input>들과 연동한다 -->
+        <!--<script>-->
+        <!--    $(function() { $("#postcodify").postcodify({-->
+        <!--        insertPostcode5 : "#postcode",-->
+        <!--        insertAddress : "#address",-->
+        <!--        insertDetails : "#details",-->
+        <!--        insertExtraInfo : "#extra_info",-->
+        <!--        hideOldAddresses : false-->
+        <!--    }); });-->
+        <!--</script>-->
+    
+      </div>
+    <% end %>
+    <div id="postcodify"></div>
         
         <!-- 위에서 생성한 <div>에 검색 기능을 표시하고, 결과를 입력할 <input>들과 연동한다 -->
         <script>
@@ -50,13 +72,6 @@
                 hideOldAddresses : false
             }); });
         </script>
-    
-      </div>
-      
-      
-    
-
-    <% end %>
   </div>
 </div>
    

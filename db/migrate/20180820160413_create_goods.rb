@@ -3,7 +3,7 @@ class CreateGoods < ActiveRecord::Migration
     create_table :goods do |t|
       t.integer :s_id
       t.integer :c_id
-      t.string :price
+      t.float :price
       t.string :image_url
       t.text :content
       t.integer :ar_private

@@ -67,11 +67,11 @@
 					<!-- Cart -->
 						<% if user_signed_in? %>
 							<span class="cart">
-								<%= link_to "MY CART", carts_path %> |
+								<%= link_to "MY CART", carts_path %> | 
 							</span>
 						<% else %>
 							<span class="cart">
-								<a href="/users/sign_in">MY CART</a> |
+								<a href="/users/sign_in">MY CART</a> | 
 							</span>
 						<% end %>
 					<!-- Star -->
@@ -87,12 +87,12 @@
 					<!--</a>-->
 					<!--로그인-->
 				      <% if current_user == nil %>
-				  		<a href="/users/sign_in">LOG IN</a>|
+				  		<a href="/users/sign_in">LOG IN</a> |
 				  		<a href="/wenique/registers_new">SIGN UP</a>
 				        
 				      <% else %>
-				  		<a href="/users/sign_out">LOG OUT</a>|
-				  		<a href="/mypage/mypage"><img src="/assets/mypage.png" height="20">MY PAGE</a>
+				  		<a href="/users/sign_out"> LOG OUT</a> |
+				  		<a href="/mypage/mypage"><img src="/assets/mypage.png" height="17"> MY PAGE</a>
 				      <% end %>
 				
 		
@@ -141,71 +141,25 @@
 	</div>
 
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">B</h5>
-              <ul class="link-list">
-                <li><a href="#">About our company</a></li>
-                <li><a href="#">Our services</a></li>
-                <li><a href="#">Meet our team</a></li>
-                <li><a href="#">Explore our portfolio</a></li>
-                <li><a href="#">Get in touch with us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Important stuff</h5>
-              <ul class="link-list">
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Career center</a></li>
-                <li><a href="#">Flattern forum</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">
-                <!--<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>-->
-              </div>
-              <div class="clear">
-              </div>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Get in touch with us</h5>
-              <address>
-								<strong>Flattern studio, Pte Ltd</strong><br>
-								 Springville center X264, Park Ave S.01<br>
-								 Semarang 16425 Indonesia
-					 		</address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+ 			<div>
+ 				
+ 			</div>
+ 			<div>
+ 				
+ 			</div>
     </footer>
 
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
 <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-<script src="assets/javascripts/jquery-3.2.1.min.js"></script>
-<script src="assets/javascripts/popper.js"></script>
-<script src="assets/javascripts/bootstrap.js"></script>
-<script src="assets/javascripts/owl.carousel.js"></script>
-<script src="assets/javascripts/easing.js"></script>
-<script src="assets/javascripts/parallax.min.js"></script>
-<script src="assets/javascripts/jquery.colorbox-min.js"></script>
-<script src="assets/javascripts/custom.js"></script>
+<script src="assets/jquery-3.2.1.min.js"></script>
+<script src="assets/popper.js"></script>
+<script src="assets/bootstrap.js"></script>
+<script src="assets/owl.carousel.js"></script>
+<script src="assets/easing.js"></script>
+<script src="assets/parallax.min.js"></script>
+<script src="assets/jquery.colorbox-min.js"></script>
+<script src="assets/custom.js"></script>
 
 
 

@@ -35,6 +35,11 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">제목</th>
+      <% if user_signed_in? %>
+        <% if current_user.authorization == '1' %>
+          <th scope="col">어드민 권한</th>
+        <% end %>
+      <% end %>
     </tr>
   </thead>
     <% @i = 1 %>
@@ -43,6 +48,14 @@
         <tr>
           <th scope="row"><%= @i %></th>
           <td><%= link_to article.title, article_path(@board, article) %></td>
+          <% if user_signed_in? %>
+            <% if current_user.authorization == '1' %>
+              <td>
+                <%= link_to '편집', edit_article_path(@board, article) %> |
+                <%= link_to '삭제', [@board, article] , method: :delete ,data: { confirm: '정말 삭제하시겠습니까?' } %>
+              </td>
+            <% end %>
+          <% end %>
         </tr>
       </tbody>
       <% @i = @i + 1 %>
